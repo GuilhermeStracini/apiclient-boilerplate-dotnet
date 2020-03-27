@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <ProjectGuid>{607C5F01-7464-496C-A4E7-9DA6FE35234E}</ProjectGuid>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Guilherme Branco Stracini</Authors>
+    <Copyright>© 2020 Guilherme Branco Stracini. All rights reserved.</Copyright>
+    <Description>A boilerplate template project for .NET API clients wrappers</Description>
+    <PackageLicenseExpression>https://raw.githubusercontent.com/guibranco/apiclient-boilerplate-dotnet/master/LICENSE</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/guibranco/apiclient-boilerplate-dotnet</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/guibranco/apiclient-boilerplate-dotnet</RepositoryUrl>
+    <RepositoryType>GIT</RepositoryType>
+    <PackageTags>boilerplate</PackageTags>
+  </PropertyGroup>
+
+</Project>
