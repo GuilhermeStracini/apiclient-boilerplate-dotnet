@@ -10,6 +10,8 @@ environment:
     secure: <secure token from SonarCloud>
   SONAR_PROJECT: <sonar cloud project name - something like: github_username_solution-name>
   SONAR_ORGANIZATION: <sonar cloud organization name - something like: github_username-github>
+  NUGET_TOKEN:
+    secure: <secure token from NuGet>
 dotnet_csproj: 
   patch: true 
   file: '**\*.csproj' 
@@ -64,7 +66,6 @@ deploy:
   on:
    branch: master
   tag: $(appveyor_build_version)
-  auth_token:
-    secure: <secure token from nuget.org>
+  auth_token: $(NUGET_TOKEN)
   force_update: true
   artifact: ZipFile
