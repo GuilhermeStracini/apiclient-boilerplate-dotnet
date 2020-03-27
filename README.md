@@ -6,7 +6,7 @@ A boilerplate API client template for those that want to build a .Net API client
 
 ## CI/CD
 
-[![Build status](https://ci.appveyor.com/api/projects/status/w9g1i60og8jyxo4d?svg=true)](https://ci.appveyor.com/project/guibranco/vtex-dotnet-sdk)
+[![Build status](https://ci.appveyor.com/api/projects/status/change-me?svg=true)](https://ci.appveyor.com/project/guibranco/change-me)
 [![SolutionName NuGet Version](https://img.shields.io/nuget/v/SolutionName.svg?style=flat)](https://www.nuget.org/packages/SolutionName/)
 [![SolutionName NuGet Downloads](https://img.shields.io/nuget/dt/SolutionName.svg?style=flat)](https://www.nuget.org/packages/SolutionName/)
 [![Github All Releases](https://img.shields.io/github/downloads/guibranco/SolutionName/total.svg?style=flat)](https://github.com/guibranco/SolutionName)
