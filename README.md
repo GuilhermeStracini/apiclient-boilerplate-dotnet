@@ -1,6 +1,8 @@
-# apiclient-boilerplate-dotnet
+# API Client boilerplate template
 
 A boilerplate API client template for those that want to build a .Net API clients wrappers
+
+![API Client Boilerplate](https://raw.githubusercontent.com/guibranco/apiclient-boilerplate-dotnet/master/logo.png)
 
 ## CI/CD
 
@@ -39,3 +41,16 @@ Install-Package SolutionName
 ## Features
 
 Implements features of SolutionName API available at [Project name](https://project.name.com/)
+
+---
+
+Remove from this line to the end after reading the **instructions below**
+
+## Instructions on how to use this template
+
+- Change the *appveyor.yml* with your own *SolutionName* and **SonarCloud token** (use a secure token).
+- Change *SolutionName.sln* to your own solution/project name.
+- Change project name (**SolutionName.csproj** and **SolutionName.Tests.csproj**) and namespace inside folders **Src** and **Tests**.
+- Change the package name in the *SolutionName.csproj*.
+- Fix in the *readme* the path of the badges and remove this section.
+- Add to *readme* usage instructions of your client.
