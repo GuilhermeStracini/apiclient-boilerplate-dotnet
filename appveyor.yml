@@ -8,7 +8,8 @@ environment:
   SOLUTION_NAME: SolutionName
   SONAR_TOKEN: 
     secure: <secure token from SonarCloud>
-  SONAR_PROJECT_NAME: solution-name
+  SONAR_PROJECT: ghusername_solution-name
+  SONAR_ORGANIZATION: ghusername-github
 dotnet_csproj: 
   patch: true 
   file: '**\*.csproj' 
@@ -30,8 +31,8 @@ build_script:
  - dotnet tool install --global dotnet-sonarscanner
  - ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & 
   dotnet sonarscanner begin 
- /k:"guibranco_$env:SONAR_PROJECT_NAME" 
- /o:"guibranco-github" 
+ /k:"$env:SONAR_PROJECT" 
+ /o:"$env:SONAR_ORGANIZATION" 
  /d:sonar.host.url="https://sonarcloud.io" 
  /d:sonar.login="$env:SONAR_TOKEN" 
  /v:"$env:APPVEYOR_BUILD_NUMBER" 
