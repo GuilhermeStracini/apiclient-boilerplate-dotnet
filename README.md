@@ -1,6 +1,6 @@
 # apiclient-boilerplate-dotnet
 
-A boilerplate API client template for write Dot Net API clients wrappers
+A boilerplate API client template for those that want to build a .Net API clients wrappers
 
 ## CI/CD
 
