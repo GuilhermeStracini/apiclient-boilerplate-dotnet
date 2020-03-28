@@ -32,6 +32,8 @@ A boilerplate API client template for those that want to build a .Net API client
 
 ---
 
+Download the latest zip file from the [Release pages](https://github.com/organization/SolutionName/releases) or simple install from [NuGet](https://www.nuget.org/packages/SolutionName) package manager
+
 NuGet package: https://www.nuget.org/packages/SolutionName
 
 ```ps
