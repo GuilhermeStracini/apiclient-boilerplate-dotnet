@@ -2,7 +2,7 @@
 
 A boilerplate API client template for those that want to build a .Net API clients wrappers
 
-![API Client Boilerplate](https://raw.githubusercontent.com/organizationName/apiclient-boilerplate-dotnet/master/logo.png)
+![API Client Boilerplate](https://raw.githubusercontent.com/guibranco/apiclient-boilerplate-dotnet/master/logo.png)
 
 ## CI/CD
 
