@@ -23,6 +23,7 @@ A boilerplate API client template for those that want to build a .Net API client
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=guibranco_SolutionName&metric=sqale_index)](https://sonarcloud.io/dashboard?id=guibranco_SolutionName)
 [![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project=guibranco_SolutionName&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id=guibranco_SolutionName)
 
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project=guibranco_SMSDev-dotnet&metric=reliability_rating)](https://sonarcloud.io/dashboard?id=guibranco_SMSDev-dotnet)
 [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=guibranco_SolutionName&metric=security_rating)](https://sonarcloud.io/dashboard?id=guibranco_SolutionName)
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=guibranco_SolutionName&metric=code_smells)](https://sonarcloud.io/dashboard?id=guibranco_SolutionName)
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project=guibranco_SolutionName&metric=bugs)](https://sonarcloud.io/dashboard?id=guibranco_SolutionName)
