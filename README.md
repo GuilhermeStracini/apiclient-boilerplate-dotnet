@@ -32,9 +32,13 @@ A boilerplate API client template for those that want to build a .Net API client
 
 ---
 
+## Installation
+
 Download the latest zip file from the [Release pages](https://github.com/organization/SolutionName/releases) or simple install from [NuGet](https://www.nuget.org/packages/SolutionName) package manager
 
-NuGet package: https://www.nuget.org/packages/SolutionName
+NuGet URL: https://www.nuget.org/packages/SolutionName
+
+NuGet installation via *Package Manager Console*:
 
 ```ps
 Install-Package SolutionName
@@ -44,11 +48,11 @@ Install-Package SolutionName
 
 ## Features
 
-Implements features of SolutionName API available at [Project name](https://project.name.com/)
+Implements all features of SolutionName API available at [Project name](https://project.name.com/)
 
 ---
 
-Remove from this line to the end after reading the **instructions below**
+Remove from this line to the end, after reading the **instructions below**
 
 ## Instructions on how to use this template
 
@@ -58,4 +62,4 @@ Remove from this line to the end after reading the **instructions below**
 - Change the package name in the *SolutionName.csproj*.
 - Change the *main project* reference in the tests project in file *Tests/SolutionName.Tests.csproj*
 - Fix in the *readme* the path of the badges and remove this section.
-- Add to *readme* usage instructions of your client.
+- Add to *readme* usage instructions of your client/SDK.
