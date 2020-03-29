@@ -6,7 +6,7 @@ skip_commits:
   message: /(Create|Update) .*\.(png|jpg|jpeg|bmp|gif|md)/
 
 environment:
-  SOLUTION_NAME: <solution name>  
+  SOLUTION_NAME: <solution name>
   SONAR_TOKEN: 
     secure: <secure token from Sonar Cloud>
   GITHUB_TOKEN:
@@ -50,11 +50,23 @@ build_script:
  /d:sonar.coverage.exclusions="**/$env:SOLUTION_NAME.Tests/**,**/*Tests.cs" 
  /d:sonar.cs.opencover.reportsPaths="$env:CD\Tests\$env:SOLUTION_NAME.Tests\coverage.opencover.xml" }'
 - dotnet build %SOLUTION_NAME%.sln
-- dotnet test .\Tests\%SOLUTION_NAME%.Tests\%SOLUTION_NAME%.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="opencover"
+- dotnet test .\Tests\%SOLUTION_NAME%.Tests\%SOLUTION_NAME%.Tests.csproj 
+ /p:CollectCoverage=true 
+ /p:CoverletOutputFormat="opencover"
 - codecov -f "%CD%\Tests\%SOLUTION_NAME%.Tests\coverage.opencover.xml"
-- dotnet test .\Tests\%SOLUTION_NAME%.Tests\%SOLUTION_NAME%.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="cobertura" 
-- java -jar -Dlogback.configurationFile="%CD%\Build\logback.xml" ./codacy-test-reporter.jar report -l CSharp -t %CODACY_PROJECT_TOKEN% -r "%CD%\Tests\%SOLUTION_NAME%.Tests\coverage.cobertura.xml"
-- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER -And $env:APPVEYOR_REPO_BRANCH -eq "master") { & dotnet sonarscanner end /d:sonar.login="$env:SONAR_TOKEN" }'
+- dotnet test .\Tests\%SOLUTION_NAME%.Tests\%SOLUTION_NAME%.Tests.csproj 
+ /p:CollectCoverage=true 
+ /p:CoverletOutputFormat="cobertura" 
+- java 
+ -jar 
+ -Dlogback.configurationFile="%CD%\Build\logback.xml" 
+ ./codacy-test-reporter.jar report 
+ -l CSharp 
+ -t %CODACY_PROJECT_TOKEN% 
+ -r "%CD%\Tests\%SOLUTION_NAME%.Tests\coverage.cobertura.xml"
+- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER -And $env:APPVEYOR_REPO_BRANCH -eq "master") { & 
+ dotnet sonarscanner end 
+ /d:sonar.login="$env:SONAR_TOKEN" }'
 
 after_build:
 - xcopy %CD%\Src\%SOLUTION_NAME%\bin\Release\netstandard2.1\*.* %CD%\Build\
