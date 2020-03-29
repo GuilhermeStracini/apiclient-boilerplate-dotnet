@@ -7,8 +7,6 @@ skip_commits:
 
 environment:
   SOLUTION_NAME: <solution name>  
-  SONAR_PROJECT: <sonar cloud project name - something like: github_username_solution-name>
-  SONAR_ORGANIZATION: <sonar cloud organization name - something like: github_username-github>
   SONAR_TOKEN: 
     secure: <secure token from Sonar Cloud>
   GITHUB_TOKEN:
@@ -25,11 +23,9 @@ dotnet_csproj:
   file_version: '{version}' 
   informational_version: '{version}' 
 
-cache:
-- C:\ProgramData\chocolatey\bin -> appveyor.yml
-- C:\ProgramData\chocolatey\lib -> appveyor.yml
-
 before_build:
+- ps: $env:SONAR_PROJECT = "$env:APPVEYOR_REPO_NAME" -replace "/","_"
+- ps: $env:SONAR_ORGANIZATION = "$env:APPVEYOR_REPO_NAME" -replace "/.*$","-github"
 - cmd: nuget restore
 - cmd: choco install opencover.portable
 - cmd: choco install codecov
@@ -43,7 +39,7 @@ build:
   verbosity: normal
 
 build_script:
-- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & 
+- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER -And $env:APPVEYOR_REPO_BRANCH -eq "master") { & 
   dotnet sonarscanner begin 
  /k:"$env:SONAR_PROJECT" 
  /o:"$env:SONAR_ORGANIZATION" 
@@ -57,8 +53,8 @@ build_script:
 - dotnet test .\Tests\%SOLUTION_NAME%.Tests\%SOLUTION_NAME%.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="opencover"
 - codecov -f "%CD%\Tests\%SOLUTION_NAME%.Tests\coverage.opencover.xml"
 - dotnet test .\Tests\%SOLUTION_NAME%.Tests\%SOLUTION_NAME%.Tests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="cobertura" 
-- java -jar ./codacy-test-reporter.jar report -l CSharp -t %CODACY_PROJECT_TOKEN% -r "%CD%\Tests\%SOLUTION_NAME%.Tests\coverage.cobertura.xml"
-- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { & dotnet sonarscanner end /d:sonar.login="$env:SONAR_TOKEN" }'
+- java -jar -Dlogback.configurationFile="%CD%\Build\logback.xml" ./codacy-test-reporter.jar report -l CSharp -t %CODACY_PROJECT_TOKEN% -r "%CD%\Tests\%SOLUTION_NAME%.Tests\coverage.cobertura.xml"
+- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER -And $env:APPVEYOR_REPO_BRANCH -eq "master") { & dotnet sonarscanner end /d:sonar.login="$env:SONAR_TOKEN" }'
 
 after_build:
 - xcopy %CD%\Src\%SOLUTION_NAME%\bin\Release\netstandard2.1\*.* %CD%\Build\
