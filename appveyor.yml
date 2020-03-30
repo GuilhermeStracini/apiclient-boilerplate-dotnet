@@ -6,7 +6,6 @@ skip_commits:
   message: /(Create|Update) .*\.(png|jpg|jpeg|bmp|gif|md)/
 
 environment:
-  SOLUTION_NAME: <solution name>
   SONAR_TOKEN: 
     secure: <secure token from Sonar Cloud>
   GITHUB_TOKEN:
@@ -24,6 +23,7 @@ dotnet_csproj:
   informational_version: '{version}' 
 
 before_build:
+- ps: $env:SOLUTION_NAME = "$env:APPVEYOR_REPO_NAME" -replace ".*/","" -replace "-SDK-dotnet",""
 - ps: $env:SONAR_PROJECT = "$env:APPVEYOR_REPO_NAME" -replace "/","_"
 - ps: $env:SONAR_ORGANIZATION = "$env:APPVEYOR_REPO_NAME" -replace "/.*$","-github"
 - cmd: nuget restore
