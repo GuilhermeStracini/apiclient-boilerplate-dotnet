@@ -15,6 +15,7 @@ A boilerplate API client template for those that want to build a .Net API client
 ## Code Quality
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/codacyid)](https://www.codacy.com/manual/changeme/codacyid)
+[![Codacy Badge](https://api.codacy.com/project/badge/Coverage/codacyid)](https://www.codacy.com/manual/changeme/codacyid)
 [![codecov](https://codecov.io/gh/USER/REPO/branch/master/graph/badge.svg)](https://codecov.io/gh/USER/REPO)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=organizationName_SolutionName&metric=alert_status)](https://sonarcloud.io/dashboard?id=organizationName_SolutionName)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=organizationName_SolutionName&metric=coverage)](https://sonarcloud.io/dashboard?id=organizationName_SolutionName)
