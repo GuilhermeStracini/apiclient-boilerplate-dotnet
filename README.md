@@ -6,16 +6,16 @@ A boilerplate API client template for those that want to build a .Net API client
 
 ## CI/CD
 
-[![Build status](https://ci.appveyor.com/api/projects/status/change-me?svg=true)](https://ci.appveyor.com/project/organizationName/change-me)
-[![SolutionName NuGet Version](https://img.shields.io/nuget/v/SolutionName.svg?style=flat)](https://www.nuget.org/packages/SolutionName/)
-[![SolutionName NuGet Downloads](https://img.shields.io/nuget/dt/SolutionName.svg?style=flat)](https://www.nuget.org/packages/SolutionName/)
-[![Github All Releases](https://img.shields.io/github/downloads/organizationName/SolutionName/total.svg?style=flat)](https://github.com/organizationName/SolutionName)
-[![Last release](https://img.shields.io/github/release-date/organizationName/SolutionName.svg?style=flat)](https://github.com/organizationName/SolutionName)
+[![Build status](https://ci.appveyor.com/api/projects/status/appVeyorId?svg=true)](https://ci.appveyor.com/project/USER/appVeyorId)
+[![SolutionName NuGet Version](https://img.shields.io/nuget/v/PackageName.svg?style=flat)](https://www.nuget.org/packages/PackageName/)
+[![SolutionName NuGet Downloads](https://img.shields.io/nuget/dt/PackageName.svg?style=flat)](https://www.nuget.org/packages/PackageName/)
+[![Github All Releases](https://img.shields.io/github/downloads/USER/REPO/total.svg?style=flat)](https://github.com/USER/REPO)
+[![Last release](https://img.shields.io/github/release-date/USER/REPO.svg?style=flat)](https://github.com/USER/REPO)
 
 ## Code Quality
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/change-me)](https://www.codacy.com/manual/changeme/change-me)
-[![codecov](https://codecov.io/gh/organizationName/SolutionName/branch/master/graph/badge.svg)](https://codecov.io/gh/organizationName/SolutionName)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/codacyid)](https://www.codacy.com/manual/changeme/codacyid)
+[![codecov](https://codecov.io/gh/USER/REPO/branch/master/graph/badge.svg)](https://codecov.io/gh/USER/REPO)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=organizationName_SolutionName&metric=alert_status)](https://sonarcloud.io/dashboard?id=organizationName_SolutionName)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=organizationName_SolutionName&metric=coverage)](https://sonarcloud.io/dashboard?id=organizationName_SolutionName)
 
@@ -34,9 +34,9 @@ A boilerplate API client template for those that want to build a .Net API client
 
 ## Installation
 
-Download the latest zip file from the [Release pages](https://github.com/organization/SolutionName/releases) or simple install from [NuGet](https://www.nuget.org/packages/SolutionName) package manager
+Download the latest zip file from the [Release pages](https://github.com/USER/REPO/releases) or simple install from [NuGet](https://www.nuget.org/packages/PackageName) package manager
 
-NuGet URL: https://www.nuget.org/packages/SolutionName
+NuGet URL: https://www.nuget.org/packages/PackageName
 
 NuGet installation via *Package Manager Console*:
 
