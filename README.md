@@ -56,6 +56,16 @@ Implements all features of SolutionName API available at [Project name](https://
 
 ---
 
+## Usage
+
+```cs
+
+//sample CSharp code showing how to use the lib
+
+```
+
+---
+
 Remove from this line to the end, after reading the **instructions below**
 
 ## Instructions on how to use this template
