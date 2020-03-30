@@ -9,7 +9,7 @@ A boilerplate API client template for those that want to build a .Net API client
 [![Build status](https://ci.appveyor.com/api/projects/status/appVeyorId?svg=true)](https://ci.appveyor.com/project/USER/appVeyorId)
 [![GitHub last commit](https://img.shields.io/github/last-commit/guibranco/apiclient-boilerplate-dotnet)](https://github.com/guibranco/apiclient-boilerplate-dotnet)
 [![GitHub last release](https://img.shields.io/github/release-date/guibranco/apiclient-boilerplate-dotnet.svg?style=flat)](https://github.com/guibranco/apiclient-boilerplate-dotnet)
-[![GitHub license](https://img.shields.io/github/license/guibranco/apiclient-boilerplate-dotnet?color=brightgreen)](https://github.com/guibranco/apiclient-boilerplate-dotnet)
+[![GitHub license](https://img.shields.io/github/license/guibranco/apiclient-boilerplate-dotnet)](https://github.com/guibranco/apiclient-boilerplate-dotnet)
 
 ## Code Quality
 
