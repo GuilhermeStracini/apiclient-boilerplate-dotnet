@@ -79,7 +79,7 @@ Remove from this line to the end, after reading the **instructions below**
 
 ## Instructions on how to use this template
 
-- Change the *appveyor.yml* with your  **token*s* (use a secure token).
+- Change the *appveyor.yml* with your **token*s* (use a secure token).
 - Change *SolutionName.sln* to your own solution/project name.
 - Change project name (**SolutionName.csproj** and **SolutionName.Tests.csproj**) and namespace inside folders **Src** and **Tests**.
 - Change the package name in the *SolutionName.csproj*.
