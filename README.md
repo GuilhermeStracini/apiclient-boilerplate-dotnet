@@ -84,3 +84,4 @@ Remove from this line to the end, after reading the **instructions below**
 - Change the *main project* reference in the tests project in file *Tests/SolutionName.Tests.csproj*
 - Fix in the *readme* the path of the badges and remove this section.
 - Add to *readme* usage instructions of your client/SDK.
+- Update _config.yml with project details (github.io docs website)
