@@ -38,14 +38,16 @@ A boilerplate API client template for those that want to build a .Net API client
 [![PacakgeName NuGet Downloads](https://img.shields.io/nuget/dt/PackageName.svg?style=flat)](https://www.nuget.org/packages/PackageName/)
 [![Github All Releases](https://img.shields.io/github/downloads/USER/REPO/total.svg?style=flat)](https://github.com/USER/REPO)
 
-Download the latest zip file from the [Release pages](https://github.com/USER/REPO/releases) or simple install from [NuGet](https://www.nuget.org/packages/PackageName) package manager
+Download the latest zip file from the [Release pages](https://github.com/USER/REPO/releases) or simple install from [NuGet](https://www.nuget.org/packages/PackageName) package manager.
 
-NuGet URL: https://www.nuget.org/packages/PackageName
+NuGet URL: [https://www.nuget.org/packages/PackageName](https://www.nuget.org/packages/PackageName)
 
 NuGet installation via *Package Manager Console*:
 
 ```ps
+
 Install-Package PackageName
+
 ```
 
 ---
