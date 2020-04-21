@@ -10,6 +10,7 @@ A boilerplate API client template for those that want to build a .Net API client
 [![GitHub last commit](https://img.shields.io/github/last-commit/guibranco/apiclient-boilerplate-dotnet)](https://github.com/guibranco/apiclient-boilerplate-dotnet)
 [![GitHub last release](https://img.shields.io/github/release-date/guibranco/apiclient-boilerplate-dotnet.svg?style=flat)](https://github.com/guibranco/apiclient-boilerplate-dotnet)
 [![GitHub license](https://img.shields.io/github/license/guibranco/apiclient-boilerplate-dotnet)](https://github.com/guibranco/apiclient-boilerplate-dotnet)
+[![time tracker](https://wakatime.com/badge/github/guibranco/apiclient-boilerplate-dotnet.svg)](https://wakatime.com/badge/github/guibranco/apiclient-boilerplate-dotnet)
 
 ## Code Quality
 
