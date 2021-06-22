@@ -39,7 +39,7 @@ build:
   verbosity: normal
 
 build_script:
-- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER -And $env:APPVEYOR_REPO_BRANCH -eq "master") { & 
+- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER -And $env:APPVEYOR_REPO_BRANCH -eq "main") { & 
   dotnet sonarscanner begin 
  /k:"$env:SONAR_PROJECT" 
  /o:"$env:SONAR_ORGANIZATION" 
@@ -60,7 +60,7 @@ build_script:
  -l CSharp 
  -t %CODACY_PROJECT_TOKEN% 
  -r "%CD%\Tests\%SOLUTION_NAME%.Tests\coverage.opencover.xml"
-- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER -And $env:APPVEYOR_REPO_BRANCH -eq "master") { & 
+- ps: 'if (-Not $env:APPVEYOR_PULL_REQUEST_NUMBER -And $env:APPVEYOR_REPO_BRANCH -eq "main") { & 
  dotnet sonarscanner end 
  /d:sonar.login="$env:SONAR_TOKEN" }'
 
@@ -86,11 +86,11 @@ deploy:
 - provider: Environment
   name: NuGet
   on:
-   branch: master
+   branch: main
   artifact: Package
 - provider: GitHub
   on:
-   branch: master
+   branch: main
   tag: $(appveyor_build_version)
   auth_token: $(GITHUB_TOKEN)
   force_update: true
