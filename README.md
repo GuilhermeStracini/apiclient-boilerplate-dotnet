@@ -57,10 +57,10 @@ Install-Package PackageName
 
 Implements all features of Project name API available at [Project name](https://project.name.com/)
 
-- Feature #1
-- Feature #2
-- Feature #3
-- Feature #N
+-  Feature #1
+-  Feature #2
+-  Feature #3
+-  Feature #N
 
 ---
 
@@ -80,11 +80,11 @@ Remove from this line to the end, after reading the **instructions below**
 
 ## Instructions on how to use this template
 
-- Change the *appveyor.yml* with your **token*s* (use a secure token).
-- Change *SolutionName.sln* to your own solution/project name.
-- Change project name (**SolutionName.csproj** and **SolutionName.Tests.csproj**) and namespace inside folders **Src** and **Tests**.
-- Change the package name in the *SolutionName.csproj*.
-- Change the *main project* reference in the tests project in file *Tests/SolutionName.Tests.csproj*
-- Fix in the *readme* the path of the badges and remove this section.
-- Add to *readme* usage instructions of your client/SDK.
-- Update _config.yml with project details (github.io docs website)
+-  Change the *appveyor.yml* with your **token*s* (use a secure token).
+-  Change *SolutionName.sln* to your own solution/project name.
+-  Change project name (**SolutionName.csproj** and **SolutionName.Tests.csproj**) and namespace inside folders **Src** and **Tests**.
+-  Change the package name in the *SolutionName.csproj*.
+-  Change the *main project* reference in the tests project in file *Tests/SolutionName.Tests.csproj*
+-  Fix in the *readme* the path of the badges and remove this section.
+-  Add to *readme* usage instructions of your client/SDK.
+-  Update _config.yml with project details (github.io docs website)
