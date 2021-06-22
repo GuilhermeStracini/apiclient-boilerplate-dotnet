@@ -2,7 +2,7 @@
 
 A boilerplate API client template for those that want to build a .Net API clients wrappers
 
-![API Client Boilerplate](https://raw.githubusercontent.com/guibranco/apiclient-boilerplate-dotnet/master/logo.png)
+![API Client Boilerplate](https://raw.githubusercontent.com/guibranco/apiclient-boilerplate-dotnet/main/logo.png)
 
 ## CI/CD
 
@@ -16,7 +16,7 @@ A boilerplate API client template for those that want to build a .Net API client
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/codacyid)](https://www.codacy.com/manual/changeme/codacyid)
 [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/codacyid)](https://www.codacy.com/manual/changeme/codacyid)
-[![Codecov](https://codecov.io/gh/USER/REPO/branch/master/graph/badge.svg)](https://codecov.io/gh/USER/REPO)
+[![Codecov](https://codecov.io/gh/USER/REPO/branch/main/graph/badge.svg)](https://codecov.io/gh/USER/REPO)
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=USER_REPO&metric=alert_status)](https://sonarcloud.io/dashboard?id=USER_REPO)
 [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=USER_REPO&metric=coverage)](https://sonarcloud.io/dashboard?id=USER_REPO)
 
