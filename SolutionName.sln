@@ -7,17 +7,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Src", "Src", "{45AB621C-765
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A68EEB0C-5948-4DD9-9E75-293EE086828B}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolutionName.UnitTests", "Tests\SolutionName.Tests\SolutionName.UnitTests.csproj", "{2F57B9CD-5505-4456-B9FE-F91DCB4476D6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionName", "Src\SolutionName\SolutionName.csproj", "{31B5C92F-CD29-4833-8119-F28E3BDCCCFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionName.IntegrationTests", "Tests\SolutionName.IntegrationTests\SolutionName.IntegrationTests.csproj", "{6B09112A-647D-4CED-87F4-4E1737CE50F1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SolutionName.UnitTests", "Tests\SolutionName.UnitTests\SolutionName.UnitTests.csproj", "{2F57B9CD-5505-4456-B9FE-F91DCB4476D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7029F144-374E-4943-B530-B3D603991881}"
 	ProjectSection(SolutionItems) = preProject
 		appveyor.yml = appveyor.yml
 		README.md = README.md
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionName.IntegrationTests", "Tests\SolutionName.IntegrationTests\SolutionName.IntegrationTests.csproj", "{6B09112A-647D-4CED-87F4-4E1737CE50F1}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolutionName", "Src\SolutionName\SolutionName.csproj", "{31B5C92F-CD29-4833-8119-F28E3BDCCCFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
