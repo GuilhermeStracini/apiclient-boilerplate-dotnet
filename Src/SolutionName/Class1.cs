@@ -1,6 +1,7 @@
-namespace SolutionName
+﻿namespace SolutionName
 {
     public class Class1
     {
+
     }
 }
