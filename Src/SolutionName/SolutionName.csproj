@@ -4,6 +4,32 @@
     <TargetFramework>net6.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Title>$(AssemblyName)</Title>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Company>Guilherme Branco Stracini ME</Company>
+    <Copyright>© 2022 Guilherme Branco Stracini ME</Copyright>
+    <PackageProjectUrl>https://guibranco.github.io/apiclient-boilerplate-dotnet</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>A boilerplate template project for .NET API clients wrappers</Description>
+    <RepositoryType>GIT</RepositoryType>
+    <RepositoryUrl>https://github.com/guibranco/apiclient-boilerplate-dotnet</RepositoryUrl>
+    <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
