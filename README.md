@@ -2,16 +2,16 @@
 
 A boilerplate API client template for those that want to build a .Net API clients wrappers
 
-[![GitHub license](https://img.shields.io/github/license/GuilhermeStracini/apiclient-boilerplate-donet)](https://github.com/GuilhermeStracini/apiclient-boilerplate-donet)
-[![Time tracker](https://wakatime.com/badge/github/guibranco/CrispyWaffle.svg)](https://wakatime.com/badge/github/guibranco/CrispyWaffle)
+[![GitHub license](https://img.shields.io/github/license/GuilhermeStracini/apiclient-boilerplate-dotnet)](https://github.com/GuilhermeStracini/apiclient-boilerplate-dotnet)
+[![Time tracker](https://wakatime.com/badge/github/GuilhermeStracini/apiclient-boilerplate-dotnet.svg)](https://wakatime.com/badge/github/GuilhermeStracini/apiclient-boilerplate-dotnet)
 
 ![API Client Boilerplate](https://raw.githubusercontent.com/GuilhermeStracini/apiclient-boilerplate-dotnet/main/logo.png)
 
 ## CI/CD
 
-| Branch | Build status | Last commit | Tests | Coverage | Code Smells | LoC | 
-|--------|--------------|-------------|-------|-------|-------|-------|
-| Master | [![Build status](https://ci.appveyor.com/api/projects/status/appVeyorId?svg=true)](https://ci.appveyor.com/project/USER/REPOSITORY) | [![GitHub last commit](https://img.shields.io/github/last-commit/GuilhermeStracini/apiclient-boilerplate-dotnet/master)](https://github.com/GuilhermeStracini/apiclient-boilerplate-dotnet) | ![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/GuilhermeStracini/apiclient-boilerplate-dotnet/master?compact_message) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=GuilhermeStracini_apiclient-boilerplate-dotnet&metric=coverage&branch=master)](https://sonarcloud.io/dashboard?id=GuilhermeStracini_apiclient-boilerplate-dotnet) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=GuilhermeStracini_apiclient-boilerplate-dotnet&metric=code_smells&branch=master)](https://sonarcloud.io/dashboard?id=GuilhermeStracini_apiclient-boilerplate-dotnet) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=GuilhermeStracini_apiclient-boilerplate-dotnet&metric=ncloc&branch=master)](https://sonarcloud.io/dashboard?id=GuilhermeStracini_apiclient-boilerplate-dotnet) | 
+| Build status | Last commit | Tests | Coverage | Code Smells | LoC | 
+|--------------|-------------|-------|-------|-------|-------|
+| [![Build status](https://ci.appveyor.com/api/projects/status/appVeyorId?svg=true)](https://ci.appveyor.com/project/USER/REPOSITORY) | [![GitHub last commit](https://img.shields.io/github/last-commit/GuilhermeStracini/apiclient-boilerplate-dotnet/master)](https://github.com/GuilhermeStracini/apiclient-boilerplate-dotnet) | ![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/GuilhermeStracini/apiclient-boilerplate-dotnet/master?compact_message) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project=GuilhermeStracini_apiclient-boilerplate-dotnet&metric=coverage&branch=master)](https://sonarcloud.io/dashboard?id=GuilhermeStracini_apiclient-boilerplate-dotnet) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=GuilhermeStracini_apiclient-boilerplate-dotnet&metric=code_smells&branch=master)](https://sonarcloud.io/dashboard?id=GuilhermeStracini_apiclient-boilerplate-dotnet) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=GuilhermeStracini_apiclient-boilerplate-dotnet&metric=ncloc&branch=master)](https://sonarcloud.io/dashboard?id=GuilhermeStracini_apiclient-boilerplate-dotnet) | 
 
 ## Code Quality (master branch)
 
