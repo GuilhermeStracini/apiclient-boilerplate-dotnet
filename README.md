@@ -16,6 +16,7 @@ A boilerplate API client template for those that want to build a .Net API client
 ## Code Quality (master branch)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/codacyId)](https://www.codacy.com/gh/GuilhermeStracini/apiclient-boilerplate-dotnet/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=gGuilhermeStracini/apiclient-boilerplate-dotnet&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/codacyId)](https://www.codacy.com/gh/GuilhermeStracini/apiclient-boilerplate-dotnet/dashboard?utm_source=github.com&utm_medium=referral&utm_content=GuilhermeStracini/apiclient-boilerplate-dotnet&utm_campaign=Badge_Coverage)
 [![codecov](https://codecov.io/gh/GuilhermeStracini/apiclient-boilerplate-dotnet/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhermeStracini/apiclient-boilerplate-dotnet)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=GuilhermeStracini_apiclient-boilerplate&metric=alert_status)](https://sonarcloud.io/dashboard?id=GuilhermeStracini_apiclient-boilerplate)
