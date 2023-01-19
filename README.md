@@ -46,15 +46,9 @@ Download the latest zip file from the [Release](https://github.com/GuilhermeStra
 [![PacakgeName NuGet Version](https://img.shields.io/nuget/v/PackageName.svg?style=flat)](https://www.nuget.org/packages/PackageName/)
 [![PacakgeName NuGet Downloads](https://img.shields.io/nuget/dt/PackageName.svg?style=flat)](https://www.nuget.org/packages/PackageName/)
 
-NuGet URL: [https://www.nuget.org/packages/PackageName](https://www.nuget.org/packages/PackageName)
-
-NuGet installation via *Package Manager Console*:
-
-```ps
-
-Install-Package PackageName
-
-```
+| Package | Version | Downloads |
+|------------------|:-------:|:-------:|
+| **PackageName** | [![PackageName NuGet Version](https://img.shields.io/nuget/v/PackageName.svg?style=flat)](https://www.nuget.org/packages/PackageName/) | [![PackageName NuGet Downloads](https://img.shields.io/nuget/dt/PackageName.svg?style=flat)](https://www.nuget.org/packages/PackageName/) |
 
 ---
 
