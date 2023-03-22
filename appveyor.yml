@@ -2,15 +2,13 @@ version: 1.0.{build}
 skip_tags: true
 image: Visual Studio 2022
 configuration: Release
-skip_commits:
-  message: /(Create|Update) .*\.(png|jpg|jpeg|bmp|gif|md)/
 
 environment:
   SOLUTION_NAME: SolutionName 
   SONAR_TOKEN: 
     secure: <secure token from Sonar Cloud>
   GITHUB_TOKEN:
-    secure: <secure token from Github>
+    secure: <secure token from GitHub>
   CODACY_PROJECT_TOKEN:
     secure: <secure token from Codacy>
 
