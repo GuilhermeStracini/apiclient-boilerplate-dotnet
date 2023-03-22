@@ -10,7 +10,7 @@
     <Copyright>© 2022 Guilherme Branco Stracini ME</Copyright>
     <PackageProjectUrl>https://guibranco.github.io/apiclient-boilerplate-dotnet</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <PackageReadmeFile>README.nuget.md</PackageReadmeFile>
     <Description>A boilerplate template project for .NET API clients wrappers</Description>
     <RepositoryType>GIT</RepositoryType>
     <RepositoryUrl>https://github.com/guibranco/apiclient-boilerplate-dotnet</RepositoryUrl>
@@ -26,7 +26,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\..\README.md">
+    <None Include="..\..\README.nuget.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
