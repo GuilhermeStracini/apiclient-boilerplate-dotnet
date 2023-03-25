@@ -11,13 +11,17 @@ A boilerplate API client template for those that want to build a .NET API client
 
 | Build status | Last commit | Tests | Coverage | Code Smells | LoC | 
 |--------------|-------------|-------|-------|-------|-------|
-| [![Build status](https://ci.appveyor.com/api/projects/status/appVeyorId?svg=true)](https://ci.appveyor.com/project/{username}/{repo}) | [![GitHub last commit](https://img.shields.io/github/last-commit/{username}/{repo}/master)](https://github.com/{username}/{repo}) | [![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/{username}/{repo}/master?compact_message)](https://ci.appveyor.com/project/{username}/{repo}/branch/master/tests) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=coverage&branch=master)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=code_smells&branch=master)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=ncloc&branch=master)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | 
+| [![Build status](https://ci.appveyor.com/api/projects/status/appVeyorId?svg=true)](https://ci.appveyor.com/project/{username}/{repo}) | [![GitHub last commit](https://img.shields.io/github/last-commit/{username}/{repo}/main)](https://github.com/{username}/{repo}) | [![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/{username}/{repo}/main?compact_message)](https://ci.appveyor.com/project/{username}/{repo}/branch/main/tests) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=coverage&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=code_smells&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=ncloc&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | 
 
-## Code Quality (master branch)
+## Code Quality (main branch)
 
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/codacyId)](https://www.codacy.com/gh/{username}/{repo}/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=g{username}/{repo}&amp;utm_campaign=Badge_Grade)
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/codacyId)](https://www.codacy.com/gh/{username}/{repo}/dashboard?utm_source=github.com&utm_medium=referral&utm_content={username}/{repo}&utm_campaign=Badge_Coverage)
-[![codecov](https://codecov.io/gh/{username}/{repo}/branch/master/graph/badge.svg)](https://codecov.io/gh/{username}/{repo})
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/{codeClimateId}/maintainability)](https://codeclimate.com/github/{username}/{repo}/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/{codeClimateId}/test_coverage)](https://codeclimate.com/github/{username}/{repo}/test_coverage)
+
+[![codecov](https://codecov.io/gh/{username}/{repo}/branch/main/graph/badge.svg)](https://codecov.io/gh/{username}/{repo})
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=alert_status)](https://sonarcloud.io/dashboard?id={username}_{repo})
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=sqale_rating)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet)
