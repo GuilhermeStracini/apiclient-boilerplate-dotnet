@@ -1,3 +1,11 @@
+<!---
+
+This file is only needed because maind readme.md file has a reference to WakaTime badge, that is currently not alloweb by Nuget gallery.
+An issue was submited to Nuget Gallery repository, if this is fixed we don't need thsis file (readme.nuget.md) anymore.
+[[Feature]: Allow readme images from WakaTime](https://github.com/NuGet/NuGetGallery/issues/9447)
+
+-->
+
 # API Client boilerplate template
 
 A boilerplate API client template for those that want to build a .NET API clients wrappers
@@ -18,7 +26,10 @@ A boilerplate API client template for those that want to build a .NET API client
 [![Codacy Badge](https://app.codacy.com/project/badge/Coverage/codacyId)](https://www.codacy.com/gh/{username}/{repo}/dashboard?utm_source=github.com&utm_medium=referral&utm_content={username}/{repo}&utm_campaign=Badge_Coverage)
 
 [![codecov](https://codecov.io/gh/{username}/{repo}/branch/main/graph/badge.svg)](https://codecov.io/gh/{username}/{repo})
-[![Known Vulnerabilities](https://snyk.io/test/github/{username}/{repo}/badge.svg)](https://snyk.io/test/github/{username}/{repo})
+[![CodeFactor](https://www.codefactor.io/repository/github/{username}/{repo}/badge)](https://www.codefactor.io/repository/github/{username}/{repo})
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/{codeClimateId}/maintainability)](https://codeclimate.com/github/{username}/{repo}/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/{codeClimateId}/test_coverage)](https://codeclimate.com/github/{username}/{repo}/test_coverage)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=alert_status)](https://sonarcloud.io/dashboard?id={username}_{repo})
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=sqale_rating)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet)
@@ -75,16 +86,3 @@ client.CallSomeMethod();
 ```
 
 ---
-
-Remove from this line to the end, after reading the **instructions below**
-
-## Instructions on how to use this template
-
--  Change the *appveyor.yml* with your **token*s* (use a secure token) or use your prefered CI tool (Circle CI, GitHub Actions, Jenkins, Team City, Azure DevOps)
--  Change *SolutionName.sln* to your own solution/project name.
--  Change project name (**SolutionName.csproj** and **SolutionName.Tests.csproj**) and namespace inside folders **Src** and **Tests**.
--  Change the package name in the *SolutionName.csproj*.
--  Change the *main project* reference in the tests project in file *Tests/SolutionName.Tests.csproj*
--  Fix in the *readme* the path of the badges and remove this section. (change all *{username}/{repo}* tokens with your own data).
--  Add to *readme* usage instructions of your client/SDK.
--  Update _config.yml with project details (github.io docs website)
