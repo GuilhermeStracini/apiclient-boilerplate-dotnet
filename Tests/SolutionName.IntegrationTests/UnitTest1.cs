@@ -1,4 +1,6 @@
-namespace SolutionName.IntegrationTests
+using Xunit;
+
+namespace SolutionName.Tests
 {
     public class UnitTest1
     {
