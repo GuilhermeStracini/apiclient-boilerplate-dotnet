@@ -2,6 +2,26 @@
 
 A boilerplate API client template for those that want to build a .NET API clients wrappers
 
+<!-- Remove next lines until the next comment section -->
+
+## Instructions on how to use this template
+
+> -  Change the *appveyor.yml* with your **token*s* (use a secure token) or use your prefered CI tool (Circle CI, GitHub Actions, Jenkins, Team City, Azure DevOps)
+> -  Change *SolutionName.sln* to your own solution/project name.
+> -  Change project name (**SolutionName.csproj**, **SolutionName.UnitTests.csproj**, **SolutionName.IntegrationTests.csproj**) and namespace inside folders **Src** and **Tests**.
+> -  Change the package name in the *SolutionName.csproj*.
+> -  Change the *main project* reference in the tests project in files *Tests/SolutionName.UnitTests.csproj* and *Tests/SolutionName.IntegrationTests.csproj*
+> -  Fix in the *readme* the path of the badges and remove this section. (change all *{username}/{repo}* tokens with your own data).
+> -  Add to *readme* usage instructions of your client/SDK.
+> -  Copy data from *readme* to *readme.nuget* file if this is still not resolved [[Feature]: Allow readme images from WakaTime](https://github.com/NuGet/NuGetGallery/issues/9447)
+> -  Update _config.yml with project details (github.io docs website)
+
+<!-- remove lines until this line -->
+
+# {Project Name} SDK .NET
+
+{Project description}
+
 [![GitHub license](https://img.shields.io/github/license/{username}/{repo})](https://github.com/{username}/{repo})
 [![Time tracker](https://wakatime.com/badge/github/{username}/{repo}.svg)](https://wakatime.com/badge/github/{username}/{repo})
 
@@ -11,13 +31,15 @@ A boilerplate API client template for those that want to build a .NET API client
 
 | Build status | Last commit | Tests | Coverage | Code Smells | LoC | 
 |--------------|-------------|-------|-------|-------|-------|
-| [![Build status](https://ci.appveyor.com/api/projects/status/appVeyorId?svg=true)](https://ci.appveyor.com/project/{username}/{repo}) | [![GitHub last commit](https://img.shields.io/github/last-commit/{username}/{repo}/main)](https://github.com/{username}/{repo}) | [![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/{username}/{repo}/main?compact_message)](https://ci.appveyor.com/project/{username}/{repo}/branch/main/tests) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=coverage&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=code_smells&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=ncloc&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | 
+| [![Build status](https://ci.appveyor.com/api/projects/status/{appVeyorId}?svg=true)](https://ci.appveyor.com/project/{username}/{repo}) | [![GitHub last commit](https://img.shields.io/github/last-commit/{username}/{repo}/main)](https://github.com/{username}/{repo}) | [![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/{username}/{repo}/main?compact_message)](https://ci.appveyor.com/project/{username}/{repo}/branch/main/tests) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=coverage&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=code_smells&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=ncloc&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | 
 
 ## Code Quality (main branch)
 
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/codacyId)](https://www.codacy.com/gh/{username}/{repo}/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=g{username}/{repo}&amp;utm_campaign=Badge_Grade)
-[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/codacyId)](https://www.codacy.com/gh/{username}/{repo}/dashboard?utm_source=github.com&utm_medium=referral&utm_content={username}/{repo}&utm_campaign=Badge_Coverage)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/{codacyId})](https://www.codacy.com/gh/{username}/{repo}/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=g{username}/{repo}&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/{codacyId})](https://www.codacy.com/gh/{username}/{repo}/dashboard?utm_source=github.com&utm_medium=referral&utm_content={username}/{repo}&utm_campaign=Badge_Coverage)
+
 [![codecov](https://codecov.io/gh/{username}/{repo}/branch/main/graph/badge.svg)](https://codecov.io/gh/{username}/{repo})
+[![CodeFactor](https://www.codefactor.io/repository/github/{username}/{repo}/badge)](https://www.codefactor.io/repository/github/{username}/{repo})
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/{codeClimateId}/maintainability)](https://codeclimate.com/github/{username}/{repo}/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/{codeClimateId}/test_coverage)](https://codeclimate.com/github/{username}/{repo}/test_coverage)
@@ -77,16 +99,3 @@ client.CallSomeMethod();
 ```
 
 ---
-
-Remove from this line to the end, after reading the **instructions below**
-
-## Instructions on how to use this template
-
--  Change the *appveyor.yml* with your **token*s* (use a secure token) or use your prefered CI tool (Circle CI, GitHub Actions, Jenkins, Team City, Azure DevOps)
--  Change *SolutionName.sln* to your own solution/project name.
--  Change project name (**SolutionName.csproj** and **SolutionName.Tests.csproj**) and namespace inside folders **Src** and **Tests**.
--  Change the package name in the *SolutionName.csproj*.
--  Change the *main project* reference in the tests project in file *Tests/SolutionName.Tests.csproj*
--  Fix in the *readme* the path of the badges and remove this section. (change all *{username}/{repo}* tokens with your own data).
--  Add to *readme* usage instructions of your client/SDK.
--  Update _config.yml with project details (github.io docs website)
