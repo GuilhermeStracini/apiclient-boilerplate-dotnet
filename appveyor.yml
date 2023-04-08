@@ -51,7 +51,7 @@ build_script:
 - ps: if(-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { $Params += "/d:sonar.branch.name=`"$env:APPVEYOR_REPO_BRANCH`"" }
 - ps: if($env:APPVEYOR_PULL_REQUEST_NUMBER) { $Params += "/d:sonar.pullrequest.key=$env:APPVEYOR_PULL_REQUEST_NUMBER" }
 - ps: Start-process "dotnet" "sonarscanner begin $($Params -join ' ')"
-- codeclimante-test-reporter before-build
+- codeclimate-test-reporter before-build
 - dotnet build %SOLUTION_NAME%.sln
 - dotnet test .\Tests\%SOLUTION_NAME%.UnitTests\%SOLUTION_NAME%.UnitTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="cobertura"
 - dotnet test .\Tests\%SOLUTION_NAME%.UnitTests\%SOLUTION_NAME%.UnitTests.csproj /p:CollectCoverage=true /p:CoverletOutputFormat="lcov"
