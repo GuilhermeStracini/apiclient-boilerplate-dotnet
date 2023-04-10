@@ -1,19 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
+    <ProjectGuid>31B5C92F-CD29-4833-8119-F28E3BDCCCFD</ProjectGuid>
+    <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <Nullable>disable</Nullable>
     <Title>$(AssemblyName)</Title>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-    <Company>Guilherme Branco Stracini ME</Company>
-    <Copyright>© 2022 Guilherme Branco Stracini ME</Copyright>
-    <PackageProjectUrl>https://guibranco.github.io/apiclient-boilerplate-dotnet</PackageProjectUrl>
+    <Company>{companyName}</Company>
+    <Copyright>© 2023 {companyName}</Copyright>
+    <PackageProjectUrl>https://{username}.github.io/{repo}</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README.nuget.md</PackageReadmeFile>
-    <Description>A boilerplate template project for .NET API clients wrappers</Description>
+    <Description>{project description}</Description>
     <RepositoryType>GIT</RepositoryType>
-    <RepositoryUrl>https://github.com/guibranco/apiclient-boilerplate-dotnet</RepositoryUrl>
+    <RepositoryUrl>https://github.com/{username}/{repo}</RepositoryUrl>
     <PackageLicenseFile>LICENSE</PackageLicenseFile>
   </PropertyGroup>
 
