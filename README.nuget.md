@@ -11,7 +11,6 @@ An issue was submited to Nuget Gallery repository, if this is fixed we don't nee
 {Project description}
 
 [![GitHub license](https://img.shields.io/github/license/{username}/{repo})](https://github.com/{username}/{repo})
-[![Time tracker](https://wakatime.com/badge/github/{username}/{repo}.svg)](https://wakatime.com/badge/github/{username}/{repo})
 
 ![API Client Boilerplate](https://raw.githubusercontent.com/GuilhermeStracini/apiclient-boilerplate-dotnet/main/logo.png)
 
