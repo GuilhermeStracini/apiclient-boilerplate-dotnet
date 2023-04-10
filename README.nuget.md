@@ -1,6 +1,6 @@
 <!---
 
-This file is only needed because maind readme.md file has a reference to WakaTime badge, that is currently not alloweb by Nuget gallery.
+This file is only needed because main readme.md file has a reference to WakaTime badge, that is currently not allowed by Nuget gallery.
 An issue was submited to Nuget Gallery repository, if this is fixed we don't need thsis file (readme.nuget.md) anymore.
 [[Feature]: Allow readme images from WakaTime](https://github.com/NuGet/NuGetGallery/issues/9447)
 
