@@ -11,7 +11,7 @@
     <Copyright>© 2023 {companyName}</Copyright>
     <PackageProjectUrl>https://{username}.github.io/{repo}</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>
-    <PackageReadmeFile>README.nuget.md</PackageReadmeFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>{project description}</Description>
     <RepositoryType>GIT</RepositoryType>
     <RepositoryUrl>https://github.com/{username}/{repo}</RepositoryUrl>
@@ -27,7 +27,7 @@
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
-    <None Include="..\..\README.nuget.md">
+    <None Include="..\..\README.md">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
     </None>
