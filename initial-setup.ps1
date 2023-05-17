@@ -6,7 +6,7 @@ $AppVeyorId = Read-Host -Prompt 'AppVeyor project ID'
 $CompanyName = Read-Host -Prompt 'Company/Author name (package copyright)'
 
 (Get-Content appveyor.yml) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content appveyor.yml
-(Get-Content README.md) | Select-Object -Skip 19 | Set-Content README.md
+(Get-Content README.md) | Select-Object -Skip 23 | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{username}", $GitHubUsername } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{repo}", $GitHubRepo } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{appVeyorId}", $AppVeyorId } | Set-Content README.md
