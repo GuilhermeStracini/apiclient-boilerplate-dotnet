@@ -6,6 +6,10 @@ A boilerplate API client template for those that want to build a .NET API client
 
 ## Instructions on how to use this template
 
+> - Run the `initial-setup.bat` and follow the prompts
+>
+> OR
+>
 > -  Change the *appveyor.yml* with your **tokens** (use secure tokens) or use your prefered CI tool (Circle CI, GitHub Actions, Jenkins, Team City, Azure DevOps)
 > -  Change *SolutionName.sln* to your own solution/project name.
 > -  Change project name (**SolutionName.csproj**, **SolutionName.UnitTests.csproj**, **SolutionName.IntegrationTests.csproj**) and namespace inside folders **Src** and **Tests**.
