@@ -15,21 +15,12 @@ $CompanyName = Read-Host -Prompt 'Company/Author name (package copyright)'
 (Get-Content _config.yml) | ForEach-Object { $_ -replace "API Client Boilerplate", $ProjectName } | Set-Content _config.yml
 (Get-Content README.md) | ForEach-Object { $_ -replace "GuilhermeStracini/apiclient-boilerplate-dotnet", "$GitHubUsername/$GitHubRepo" } | Set-Content README.md
 (Get-Content _config.yml) | ForEach-Object { $_ -replace "GuilhermeStracini/apiclient-boilerplate-dotnet", "$GitHubUsername/$GitHubRepo" } | Set-Content _config.yml
-(Get-ChildItem -Recurse -Include *.cs) | ForEach-Object { 
+(Get-ChildItem -Recurse -Include *.cs*) | ForEach-Object { 
     $Content = Get-Content $_
     $Content = $Content -replace "SolutionName", $SolutionName
     Set-Content -Path $_.fullname -Value $Content
 }
-(Get-ChildItem -Recurse -Include *.csproj) | ForEach-Object { 
-    $Content = Get-Content $_
-    $Content = $Content -replace "SolutionName", $SolutionName
-    Set-Content -Path $_.fullname.ToString.Replace("SolutionName", "$SolutionName") -Value $Content
-}
 (Get-Content SolutionName.sln) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content ".\$SolutionName.sln"
 Remove-Item SolutionName.sln
-Rename-Item -Path "Src/SolutionName/SolutionName.csproj" -NewName "Src/SolutionName/$SolutionName.csproj"
-Rename-Item -Path "Src/SolutionName" "Src/$SolutionName"
-Rename-Item -Path "Tests/SolutionName.IntegrationTests/SolutionName.IntegrationTests.csproj" -NewName "Tests/SolutionName.IntegrationTests/$SolutionName.IntegrationTest.csproj"
-Rename-Item -Path "Tests/SolutionName.IntegrationTests" "Tests/$SolutionName.IntegrationTests"
-Rename-Item -Path "Tests/SolutionName.UnitTests/SolutionName.UnitTests.csproj" -NewName "Tests/SolutionName.UnitTests/$SolutionName.UnitTests.csproj"
-Rename-Item -Path "Tests/SolutionName.UnitTests" "Tests/$SolutionName.UnitTests"
+Remove-Item initial-setup.ps1
+Remove-Item initial-setup.bat
