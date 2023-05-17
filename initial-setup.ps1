@@ -20,11 +20,13 @@ $CompanyName = Read-Host -Prompt 'Company/Author name (package copyright)'
     $Content = $Content -replace "SolutionName", $SolutionName
     Set-Content -Path $_.fullname -Value $Content
 }
-(Get-Content SolutionName.sln) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content ".\$SolutionName.sln"
-Remove-Item SolutionName.sln
-Rename-Item -Path "Src\SolutionName\SolutionName.csproj" -NewName "Src\SolutionName\$SolutionName.csproj"
-Rename-Item -Path "Src\SolutionName" "Src\$SolutionName"
-Rename-Item -Path "Tests\SolutionName.IntegrationTests\SolutionName.IntegrationTests.csproj" -NewName "Tests\SolutionName.IntegrationTests\$SolutionName.IntegrationTest.csproj"
-Rename-Item -Path "Tests\SolutionName.IntegrationTests" "Tests\$SolutionName.IntegrationTests"
-Rename-Item -Path "Tests\SolutionName.UnitTests\SolutionName.UnitTests.csproj" -NewName "Tests\SolutionName.UnitTests\$SolutionName.UnitTests.csproj"
-Rename-Item -Path "Tests\SolutionName.UnitTests" "Tests\$SolutionName.UnitTests"
+(Get-Content SolutionName.sln) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content SolutionName.sln
+Rename-Item -Path ".\SolutionName.sln" ".\$SolutionName.sln"
+Rename-Item -Path "Src/SolutionName/SolutionName.csproj" -NewName "$SolutionName.csproj"
+Rename-Item -Path "Src/SolutionName" "Src/$SolutionName"
+Rename-Item -Path "Tests/SolutionName.IntegrationTests/SolutionName.IntegrationTests.csproj" -NewName "$SolutionName.IntegrationTest.csproj"
+Rename-Item -Path "Tests/SolutionName.IntegrationTests" "Tests/$SolutionName.IntegrationTests"
+Rename-Item -Path "Tests/SolutionName.UnitTests/SolutionName.UnitTests.csproj" -NewName "$SolutionName.UnitTests.csproj"
+Rename-Item -Path "Tests/SolutionName.UnitTests" "Tests/$SolutionName.UnitTests"
+Remove-Item initial-setup.bat
+Remove-Item initial-setup.ps1
