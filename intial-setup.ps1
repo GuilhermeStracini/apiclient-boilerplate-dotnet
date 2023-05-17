@@ -5,13 +5,16 @@ $GitHubRepo = Read-Host -Prompt 'GitHub repository'
 $AppVeyorId = Read-Host -Prompt 'AppVeyor project ID'
 $CompanyName = Read-Host -Prompt 'Company/Author name (package copyright)'
 
+(Get-Content appveyor.yml) | ForEach-Object { $_ -replace "SolutionName", $SolutionName }  Set-Content appveyor.yml
 Get-Content README.md | Select-Object -Skip 19 | Out-File README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{username}", $GitHubUsername }  Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{repo}", $GitHubUserRepo }  Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{appVeyorId}", $AppVeyorId }  Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "API Client Boilerplate", $ProjectName } | Set-Content README.md
-(Get-Content README.md) | ForEach-Object { $_ -replace "GuilhermeStracini/apiclient-boilerplate-dotnet", "$GitHubUsername\$GitHubRepo" } | Set-Content README.md
+(Get-Content _config.yml) | ForEach-Object { $_ -replace "API Client Boilerplate", $ProjectName } | Set-Content _config.yml
+(Get-Content README.md) | ForEach-Object { $_ -replace "GuilhermeStracini/apiclient-boilerplate-dotnet", "$GitHubUsername/$GitHubRepo" } | Set-Content README.md
+(Get-Content _config.yml) | ForEach-Object { $_ -replace "GuilhermeStracini/apiclient-boilerplate-dotnet", "$GitHubUsername/$GitHubRepo" } | Set-Content _config.yml
 (Get-ChildItem -Recurse -Include *.cs | Get-Content) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content $_.Fullname
 (Get-ChildItem -Recurse -Include *.csproj | Get-Content) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content $_.Fullname.ToString().Replace('SolutionName', $SolutionName)
 (Get-Content SolutionName.sln) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content ".\$SolutionName.sln"
