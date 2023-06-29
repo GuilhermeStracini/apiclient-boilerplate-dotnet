@@ -2,7 +2,7 @@
 
 A boilerplate API client template for those that want to build a .NET API clients wrappers
 
-<!-- Remove next lines until the next comment section -->
+<!-- Remove the following lines until the following comment section -->
 
 ## Instructions on how to use this template
 
@@ -10,8 +10,8 @@ A boilerplate API client template for those that want to build a .NET API client
 >
 > OR
 >
-> -  Change the *appveyor.yml* with your **tokens** (use secure tokens) or use your prefered CI tool (Circle CI, GitHub Actions, Jenkins, Team City, Azure DevOps)
-> -  Change *SolutionName.sln* to your own solution/project name.
+> -  Change the *appveyor.yml* with your **tokens** (use secure tokens) or use your preferred CI tool (Circle CI, GitHub Actions, Jenkins, Team City, Azure DevOps)
+> -  Change *SolutionName.sln* to your solution/project name.
 > -  Change project name (**SolutionName.csproj**, **SolutionName.UnitTests.csproj**, **SolutionName.IntegrationTests.csproj**) and namespace inside folders **Src** and **Tests**.
 > -  Change the package name in the *SolutionName.csproj*.
 > -  Change the *main project* reference in the tests project in files *Tests/SolutionName.UnitTests.csproj* and *Tests/SolutionName.IntegrationTests.csproj*
@@ -34,7 +34,7 @@ A boilerplate API client template for those that want to build a .NET API client
 
 | Build status | Last commit | Tests | Coverage | Code Smells | LoC | 
 |--------------|-------------|-------|-------|-------|-------|
-| [![Build status](https://ci.appveyor.com/api/projects/status/{appVeyorId}?svg=true)](https://ci.appveyor.com/project/{username}/{repo}) | [![GitHub last commit](https://img.shields.io/github/last-commit/{username}/{repo}/main)](https://github.com/{username}/{repo}) | [![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/{username}/{repo}/main?compact_message)](https://ci.appveyor.com/project/{username}/{repo}/branch/main/tests) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=coverage&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=code_smells&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}-dotnet&metric=ncloc&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet) | 
+| [![Build status](https://ci.appveyor.com/api/projects/status/{appVeyorId}?svg=true)](https://ci.appveyor.com/project/{username}/{repo}) | [![GitHub last commit](https://img.shields.io/github/last-commit/{username}/{repo}/main)](https://github.com/{username}/{repo}) | [![AppVeyor tests (branch)](https://img.shields.io/appveyor/tests/{username}/{repo}/main?compact_message)](https://ci.appveyor.com/project/{username}/{repo}/branch/main/tests) | [![Coverage](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=coverage&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}) | [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=code_smells&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}) | [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=ncloc&branch=main)](https://sonarcloud.io/dashboard?id={username}_{repo}) | 
 
 ## Code Quality (main branch)
 
@@ -48,16 +48,16 @@ A boilerplate API client template for those that want to build a .NET API client
 [![Test Coverage](https://api.codeclimate.com/v1/badges/{codeClimateId}/test_coverage)](https://codeclimate.com/github/{username}/{repo}/test_coverage)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=alert_status)](https://sonarcloud.io/dashboard?id={username}_{repo})
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=sqale_rating)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=sqale_rating)](https://sonarcloud.io/dashboard?id={username}_{repo})
 
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=sqale_index)](https://sonarcloud.io/dashboard?id={username}_{repo})
-[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet)
+[![Duplicated Lines (%)](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=duplicated_lines_density)](https://sonarcloud.io/dashboard?id={username}_{repo})
 
-[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=reliability_rating)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet)
-[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=security_rating)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet)
+[![Reliability Rating](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=reliability_rating)](https://sonarcloud.io/dashboard?id={username}_{repo})
+[![Security Rating](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=security_rating)](https://sonarcloud.io/dashboard?id={username}_{repo})
 
 [![Bugs](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=bugs)](https://sonarcloud.io/dashboard?id={username}_{repo})
-[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id={username}_{repo}-dotnet)
+[![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project={username}_{repo}&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id={username}_{repo})
 
 ---
 
