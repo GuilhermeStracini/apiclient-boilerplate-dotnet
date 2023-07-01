@@ -3,6 +3,8 @@ $SolutionName = Read-Host -Prompt 'New solution name (SlugVersion)'
 $GitHubUsername = Read-Host -Prompt 'GitHub username'
 $GitHubRepo = Read-Host -Prompt 'GitHub repository'
 $AppVeyorId = Read-Host -Prompt 'AppVeyor project ID'
+$CodacyId = Read-Nost -Prompt 'Codacy project ID'
+$CodeClimateId = Read-Nost -Prompt 'Code Climate project ID'
 $CompanyName = Read-Host -Prompt 'Company/Author name (package copyright)'
 
 (Get-Content README.md) | Select-Object -Skip 23 | Set-Content README.md
@@ -10,6 +12,8 @@ $CompanyName = Read-Host -Prompt 'Company/Author name (package copyright)'
 (Get-Content README.md) | ForEach-Object { $_ -replace "{username}", $GitHubUsername } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{repo}", $GitHubRepo } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{appVeyorId}", $AppVeyorId } | Set-Content README.md
+(Get-Content README.md) | ForEach-Object { $_ -replace "{codacyId}", $CodacyId } | Set-Content README.md
+(Get-Content README.md) | ForEach-Object { $_ -replace "{codeClimateId}", $CodeClimateId } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "API Client Boilerplate", $ProjectName } | Set-Content README.md
 
