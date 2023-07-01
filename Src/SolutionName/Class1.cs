@@ -1,4 +1,6 @@
-﻿namespace SolutionName
+﻿using System;
+
+namespace SolutionName
 {
     public class Class1
     {
