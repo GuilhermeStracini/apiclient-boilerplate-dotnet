@@ -1,5 +1,5 @@
 theme: jekyll-theme-minimal
-title: API Client Boilerplate .NET
+title: API Client Boilerplate .NET SDK Client
 description: A template repository for .NET API clients projects.
 logo: https://raw.githubusercontent.com/GuilhermeStracini/apiclient-boilerplate-dotnet/main/logo.png
 show_downloads: true

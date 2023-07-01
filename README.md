@@ -23,7 +23,7 @@ A boilerplate API client template for those that want to build a .NET API client
 
 # {Project Name} SDK .NET
 
-{Project description}
+{Project Description}
 
 [![GitHub license](https://img.shields.io/github/license/{username}/{repo})](https://github.com/{username}/{repo})
 [![Time tracker](https://wakatime.com/badge/github/{username}/{repo}.svg)](https://wakatime.com/badge/github/{username}/{repo})
