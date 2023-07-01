@@ -3,11 +3,14 @@
   <PropertyGroup>
     <ProjectGuid>31B5C92F-CD29-4833-8119-F28E3BDCCCFD</ProjectGuid>
     <TargetFrameworks>netstandard2.0;netstandard2.1</TargetFrameworks>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <LangVersion>latest</LangVersion>
     <ImplicitUsings>disable</ImplicitUsings>
     <Nullable>disable</Nullable>
     <Title>$(AssemblyName)</Title>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Company>{companyName}</Company>
+    <Author>{companyName}</Author>
     <Copyright>© 2023 {companyName}</Copyright>
     <PackageProjectUrl>https://{username}.github.io/{repo}</PackageProjectUrl>
     <PackageIcon>logo.png</PackageIcon>

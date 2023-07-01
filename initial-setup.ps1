@@ -1,6 +1,6 @@
 $ProjectName = Read-Host -Prompt 'Project name (readable version)'
 $ProjectDescription = Read-Host -Prompt 'Brief resume of this project'
-$SolutionName = Read-Host -Prompt 'Solution name (SlugVersion)'
+$SolutionName = Read-Host -Prompt 'Solution name / NuGet package name (SlugVersion)'
 $GitHubUsername = Read-Host -Prompt 'GitHub username'
 $GitHubRepo = Read-Host -Prompt 'GitHub repository'
 $AppVeyorId = Read-Host -Prompt 'AppVeyor project ID'
@@ -23,9 +23,11 @@ $UnitTestProjectFile = "Tests/SolutionName.UnitTests/SolutionName.UnitTests.cspr
 (Get-Content README.md) | ForEach-Object { $_ -replace "{codacyId}", $CodacyId } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{codeClimateId}", $CodeClimateId } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content README.md
-(Get-Content README.md) | ForEach-Object { $_ -replace "API Client Boilerplate", $ProjectName } | Set-Content README.md
+(Get-Content README.md) | ForEach-Object { $_ -replace "PackageName", $SolutionName } | Set-Content README.md
+(Get-Content README.md) | ForEach-Object { $_ -replace "{Project Name}", $ProjectName } | Set-Content README.md
+(Get-Content README.md) | ForEach-Object { $_ -replace "{Project Description}", $ProjectDescription } | Set-Content README.md
 
-(Get-Content _config.yml) | ForEach-Object { $_ -replace "API Client Boilerplate .NET", "$ProjectName .NET SDK Client" } | Set-Content _config.yml
+(Get-Content _config.yml) | ForEach-Object { $_ -replace "API Client Boilerplate", $ProjectName } | Set-Content _config.yml
 (Get-Content _config.yml) | ForEach-Object { $_ -replace "A template repository for .NET API clients projects.", $ProjectDescription } | Set-Content _config.yml
 (Get-Content _config.yml) | ForEach-Object { $_ -replace "GuilhermeStracini/apiclient-boilerplate-dotnet", "$GitHubUsername/$GitHubRepo" } | Set-Content _config.yml
 
