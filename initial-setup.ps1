@@ -23,7 +23,7 @@ $UnitTestProjectFile = "Tests/SolutionName.UnitTests/SolutionName.UnitTests.cspr
 (Get-Content README.md) | ForEach-Object { $_ -replace "{codacyId}", $CodacyId } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{codeClimateId}", $CodeClimateId } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content README.md
-(Get-Content README.md) | ForEach-Object { $_ -replace "PackageName", $SolutionName } | Set-Content README.md
+(Get-Content README.md) | ForEach-Object { $_ -replace "{PackageName}", $SolutionName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{Project Name}", $ProjectName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{Project Description}", $ProjectDescription } | Set-Content README.md
 
@@ -54,6 +54,7 @@ Rename-Item -Path ".\SolutionName.sln" ".\$SolutionName.sln"
 (Get-Content $MainProjectFile) | ForEach-Object { $_ -replace "{username}", $GitHubUsername } | Set-Content $MainProjectFile
 (Get-Content $MainProjectFile) | ForEach-Object { $_ -replace "{repo}", $GitHubRepo } | Set-Content $MainProjectFile
 (Get-Content $MainProjectFile) | ForEach-Object { $_ -replace "{companyName}", $CompanyName } | Set-Content $MainProjectFile
+(Get-Content $MainProjectFIle) | ForEach-Object { $_ -replace "{project description}", $ProjectDescription } | Set-Content $MainProjectFile
 
 Rename-Item -Path $MainProjectFile -NewName "$SolutionName.csproj"
 Rename-Item -Path $IntegrationTestProjectFile -NewName "$SolutionName.IntegrationTest.csproj"
