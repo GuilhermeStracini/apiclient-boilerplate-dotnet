@@ -27,6 +27,8 @@ $UnitTestProjectFile = "Tests/SolutionName.UnitTests/SolutionName.UnitTests.cspr
 (Get-Content README.md) | ForEach-Object { $_ -replace "{Project Name}", $ProjectName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{Project Description}", $ProjectDescription } | Set-Content README.md
 
+(Get-Content .wakatime-project) | ForEach-Object { $_ -replace "API Client Boilerplate .NET", "$ProjectName SDK .NET" } | Set-Content .wakatime-project
+
 (Get-Content _config.yml) | ForEach-Object { $_ -replace "API Client Boilerplate", $ProjectName } | Set-Content _config.yml
 (Get-Content _config.yml) | ForEach-Object { $_ -replace "A template repository for .NET API clients projects.", $ProjectDescription } | Set-Content _config.yml
 (Get-Content _config.yml) | ForEach-Object { $_ -replace "GuilhermeStracini/apiclient-boilerplate-dotnet", "$GitHubUsername/$GitHubRepo" } | Set-Content _config.yml
