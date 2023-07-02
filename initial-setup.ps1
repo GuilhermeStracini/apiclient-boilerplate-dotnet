@@ -23,7 +23,7 @@ $UnitTestProjectFile = "Tests/SolutionName.UnitTests/SolutionName.UnitTests.cspr
 (Get-Content README.md) | ForEach-Object { $_ -replace "{codacyId}", $CodacyId } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{codeClimateId}", $CodeClimateId } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content README.md
-(Get-Content README.md) | ForEach-Object { $_ -replace "PackageName", $SolutionName } | Set-Content README.md
+(Get-Content README.md) | ForEach-Object { $_ -replace "{PackageName}", $SolutionName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{Project Name}", $ProjectName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{Project Description}", $ProjectDescription } | Set-Content README.md
 
