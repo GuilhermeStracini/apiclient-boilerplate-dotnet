@@ -57,7 +57,7 @@ Rename-Item -Path ".\SolutionName.sln" ".\$SolutionName.sln"
 (Get-Content $MainProjectFIle) | ForEach-Object { $_ -replace "{project description}", $ProjectDescription } | Set-Content $MainProjectFile
 
 Rename-Item -Path $MainProjectFile -NewName "$SolutionName.csproj"
-Rename-Item -Path $IntegrationTestProjectFile -NewName "$SolutionName.IntegrationTest.csproj"
+Rename-Item -Path $IntegrationTestProjectFile -NewName "$SolutionName.IntegrationTests.csproj"
 Rename-Item -Path $UnitTestProjectFile -NewName "$SolutionName.UnitTests.csproj"
 
 Rename-Item -Path "Src/SolutionName" "$SolutionName"
