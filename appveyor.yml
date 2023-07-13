@@ -58,7 +58,7 @@ build_script:
     {
         foreach($coverletFormat in $coverletFormats)
         {
-           echo $testProject /p:CollectCoverage=true /p:CoverletOutputFormat="$coverletFormat"
+           dotnet test $testProject /p:CollectCoverage=true /p:CoverletOutputFormat="$coverletFormat"
         }
     }
 - codeclimate-test-reporter format-coverage -t lcov -o "%CD%\Tests\%SOLUTION_NAME%.UnitTests\code-climate.json" "%CD%\Tests\%SOLUTION_NAME%.UnitTests\coverage.info"
