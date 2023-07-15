@@ -10,6 +10,7 @@ $CompanyName = Read-Host -Prompt 'Company/Author name (package copyright)'
 $CodacyToken = Read-Host -Prompt 'Codacy secure token (AppVeyor)'
 $CodeClimateToken = Read-Host -Prompt 'Code Climate secure token (AppVeyor)'
 $SonarCloudToken = Read-Host -Prompt 'Sonar Cloud secure token (AppVeyor)'
+$DocumentationWebsite = Read-Host -Prompt 'API documentation URL'
 
 $MainProjectFile = "Src/SolutionName/SolutionName.csproj"
 $IntegrationTestProjectFile = "Tests/SolutionName.IntegrationTests/SolutionName.IntegrationTests.csproj"
@@ -26,6 +27,7 @@ $UnitTestProjectFile = "Tests/SolutionName.UnitTests/SolutionName.UnitTests.cspr
 (Get-Content README.md) | ForEach-Object { $_ -replace "{PackageName}", $SolutionName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{Project Name}", $ProjectName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{Project Description}", $ProjectDescription } | Set-Content README.md
+(Get-Content README.md) | ForEach-Object { $_ -replace "https://project.name.com/", $DocumentationWebsite } | Set-Content README.md
 
 (Get-Content .wakatime-project) | ForEach-Object { $_ -replace "API Client Boilerplate .NET", "$ProjectName SDK .NET" } | Set-Content .wakatime-project
 
