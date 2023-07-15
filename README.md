@@ -2,10 +2,9 @@
 
 A boilerplate API client template for those that want to build a .NET API clients wrappers
 
-<!-- Remove the following lines until the following comment section -->
-
 ## Instructions on how to use this template
 
+> **Note**
 > - Run the `initial-setup.bat` and follow the prompts
 >
 > OR
@@ -82,7 +81,7 @@ Download the latest zip file from the [Release](https://github.com/{username}/{r
 
 ## Features
 
-Implements all features of Project name API available at [Project name](https://project.name.com/)
+Implements all features of {Project Name} API available at [{Project Name}](https://project.name.com/)
 
 -  Feature #1
 -  Feature #2
