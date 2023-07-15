@@ -33,7 +33,6 @@ $UnitTestProjectFile = "Tests/SolutionName.UnitTests/SolutionName.UnitTests.cspr
 (Get-Content _config.yml) | ForEach-Object { $_ -replace "A template repository for .NET API clients projects.", $ProjectDescription } | Set-Content _config.yml
 (Get-Content _config.yml) | ForEach-Object { $_ -replace "GuilhermeStracini/apiclient-boilerplate-dotnet", "$GitHubUsername/$GitHubRepo" } | Set-Content _config.yml
 
-(Get-Content appveyor.yml) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content appveyor.yml
 (Get-Content appveyor.yml) | ForEach-Object { $_ -replace "<secure token from Codacy>", $CodacyToken } | Set-Content appveyor.yml
 (Get-Content appveyor.yml) | ForEach-Object { $_ -replace "<secure token from CodeClimate>", $CodeClimateToken } | Set-Content appveyor.yml
 (Get-Content appveyor.yml) | ForEach-Object { $_ -replace "<secure token from Sonar Cloud>", $SonarCloudToken } | Set-Content appveyor.yml
