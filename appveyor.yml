@@ -28,6 +28,9 @@ before_build:
 - ps: $env:SOLUTION_NAME = $([io.path]::GetFileNameWithoutExtension($(Get-ChildItem -Path .\* -Include *.sln)))
 - ps: $env:SONAR_PROJECT = "$env:APPVEYOR_REPO_NAME" -replace "/","_"
 - ps: $env:SONAR_ORGANIZATION = "$env:APPVEYOR_REPO_NAME" -replace "/.*$","-github"
+- ps: $env:LOCAL_PR = 0
+- ps: if(-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { $env:LOCAL_PR = 1 }
+- ps: if($env:APPVEYOR_PULL_REQUEST_HEAD_REPO_NAME -Eq $env:APPVEYOR_REPO_NAME) { $env:LOCAL_PR = 1 }
 - cmd: nuget restore
 - cmd: choco install opencover.portable
 - cmd: choco install codecov
@@ -43,29 +46,30 @@ build:
 
 build_script:
 - ps: $Params =  "/k:`"$env:SONAR_PROJECT`"", "/o:`"$env:SONAR_ORGANIZATION`"", "/v:`"$env:APPVEYOR_BUILD_NUMBER`""
-- ps: $Params += "/d:sonar.host.url=`"https://sonarcloud.io`"", "/d:sonar.token=`"$env:SONAR_TOKEN`""
-- ps: $Params += "/d:sonar.exclusions=`"**/bin/**/*,**/obj/**/*`"", "/d:sonar.coverage.exclusions=`"**/$env:SOLUTION_NAME.IntegrationTests/**,**/$env:SOLUTION_NAME.UnitTests/**,**/*Tests.cs`""
-- ps: $Params += "/d:sonar.cs.opencover.reportsPaths=`"Tests\$env:SOLUTION_NAME.UnitTests\coverage.opencover.xml`""
+- ps: $Params += "/d:sonar.host.url=`"https://sonarcloud.io`""
+- ps: if($env:LOCAL_PR -Eq 1) { $Params +=  "/d:sonar.token=`"$env:SONAR_TOKEN`"" }
+- ps: $Params += "/d:sonar.exclusions=`"**/bin/**/*,**/obj/**/*`"", "/d:sonar.coverage.exclusions=`"**/$env:SOLUTION_NAME.Tests/**,**/*Tests.cs`""
+- ps: $Params += "/d:sonar.cs.opencover.reportsPaths=`"$env:CD\Tests\$env:SOLUTION_NAME.Tests\coverage.opencover.xml`""
 - ps: if(-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { $Params += "/d:sonar.branch.name=`"$env:APPVEYOR_REPO_BRANCH`"" }
 - ps: if($env:APPVEYOR_PULL_REQUEST_NUMBER) { $Params += "/d:sonar.pullrequest.key=$env:APPVEYOR_PULL_REQUEST_NUMBER", "/d:sonar.pullrequest.branch=`"$env:APPVEYOR_REPO_BRANCH`"" }
 - ps: Start-process "dotnet" "sonarscanner begin $($Params -join ' ')"
 - codeclimate-test-reporter before-build
 - dotnet build %SOLUTION_NAME%.sln
-- ps: $testProjects = (Get-ChildItem -Path .\Tests\**\ -Recurse -Include *.csproj).Fullname
-- ps: $coverletFormats = @('cobertura', 'lcov', 'opencover')
+- ps: $TEST_PROJECTS = (Get-ChildItem -Path .\Tests\**\ -Recurse -Include *.csproj).Fullname
+- ps: $COVERLET_FORMATS = @('cobertura', 'lcov', 'opencover')
 - ps: |
-    foreach($testProject in $testProjects)
+    foreach($testProject in $TEST_PROJECTS)
     {
-        foreach($coverletFormat in $coverletFormats)
+        foreach($coverletFormat in $COVERLET_FORMATS)
         {
            dotnet test $testProject /p:CollectCoverage=true /p:CoverletOutputFormat="$coverletFormat"
         }
     }
-- codeclimate-test-reporter format-coverage -t lcov -o "Tests\%SOLUTION_NAME%.UnitTests\code-climate.json" "Tests\%SOLUTION_NAME%.UnitTests\coverage.info"
-- codeclimate-test-reporter upload-coverage -i "Tests\%SOLUTION_NAME%.UnitTests\code-climate.json" -r %CODECLIMATE_TOKEN%
-- codecov -f "Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
-- java -jar ./codacy-test-reporter.jar report -l CSharp -t %CODACY_PROJECT_TOKEN% -r "Tests\%SOLUTION_NAME%.UnitTests\coverage.opencover.xml"
-- dotnet sonarscanner end /d:sonar.token="%SONAR_TOKEN%"
+- if %LOCAL_PR% EQU 1 codecov -f "Tests\%SOLUTION_NAME%.Tests\coverage.opencover.xml"
+- if %LOCAL_PR% EQU 1 codeclimate-test-reporter format-coverage -t lcov -o "Tests\%SOLUTION_NAME%.Tests\code-climate.json" "Tests\%SOLUTION_NAME%.Tests\coverage.info"
+- if %LOCAL_PR% EQU 1 codeclimate-test-reporter upload-coverage -i "Tests\%SOLUTION_NAME%.Tests\code-climate.json" -r %CODECLIMATE_TOKEN%
+- if %LOCAL_PR% EQU 1 java -jar ./codacy-test-reporter.jar report -l CSharp -t %CODACY_PROJECT_TOKEN% -r "Tests\%SOLUTION_NAME%.Tests\coverage.opencover.xml"
+- if %LOCAL_PR% EQU 1 dotnet sonarscanner end /d:sonar.token="%SONAR_TOKEN%"
 
 after_build:
 - xcopy Src\%SOLUTION_NAME%\bin\Release\netstandard2.0\*.* Build\netstandard2.0\
