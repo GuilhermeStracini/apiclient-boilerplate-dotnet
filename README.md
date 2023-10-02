@@ -2,6 +2,8 @@
 
 A boilerplate API client template for those that want to build a .NET API clients wrappers
 
+<!-- Remove the following lines until the following comment section -->
+
 ## Instructions on how to use this template
 
 > **Note**
