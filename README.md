@@ -103,3 +103,9 @@ client.CallSomeMethod();
 ```
 
 ---
+
+## License
+
+Licensed under
+
+MIT license ([LICENSE](https://github.com/guibranco/apiclient-boilerplate-dotnet/blob/main/LICENSE) or [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT))
