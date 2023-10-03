@@ -1,6 +1,6 @@
 # API Client boilerplate template
 
-A boilerplate API client template for those that want to build a .NET API clients wrappers
+A boilerplate API client template for those who want to build a .NET API client wrappers
 
 <!-- Remove the following lines until the following comment section -->
 
@@ -103,3 +103,9 @@ client.CallSomeMethod();
 ```
 
 ---
+
+## License
+
+Licensed under
+
+MIT license ([LICENSE](https://github.com/guibranco/apiclient-boilerplate-dotnet/blob/main/LICENSE) or [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT))
