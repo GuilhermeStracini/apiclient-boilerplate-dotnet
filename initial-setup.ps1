@@ -16,7 +16,9 @@ $MainProjectFile = "Src/SolutionName/SolutionName.csproj"
 $IntegrationTestProjectFile = "Tests/SolutionName.IntegrationTests/SolutionName.IntegrationTests.csproj"
 $UnitTestProjectFile = "Tests/SolutionName.UnitTests/SolutionName.UnitTests.csproj"
 
-(Get-Content README.md) | Select-Object -Skip 24 | Set-Content README.md
+Remove-Item README.md
+(Get-Content README.template.md) | Select-Object -Skip 24 | Set-Content README.md
+Remove-Item README.template.md
 
 (Get-Content README.md) | ForEach-Object { $_ -replace "{username}", $GitHubUsername } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{repo}", $GitHubRepo } | Set-Content README.md
