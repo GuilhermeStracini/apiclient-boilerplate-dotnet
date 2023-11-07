@@ -1,5 +1,7 @@
 version = 1
 
+test_patterns = ["Tests/**"]
+
 [[analyzers]]
 name = "test-coverage"
 
@@ -11,7 +13,3 @@ name = "csharp"
 
 [[analyzers]]
 name = "docker"
-
-test_patterns = \[  
-  "tests/\*\*" 
-]
