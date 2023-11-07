@@ -31,9 +31,9 @@ This is a **template repository** that sets the basic code and infrastructure fo
 -  Delete this file (`README.md`) and rename `README.template.md` to `README.md`
 -  Change the `appveyor.yml` with your **tokens** (use secure tokens) or use your preferred CI tool (Circle CI, GitHub Actions, Jenkins, Team City, Azure DevOps)
 -  Change `SolutionName.sln` to your solution/project name.
--  Change project name (`SolutionName.csproj`, `SolutionName.UnitTests.csproj`, `SolutionName.IntegrationTests.csproj`) and namespace inside directories `Src` and `Tests`.
+-  Change project name (`SolutionName.csproj`, `SolutionName.Tests.csproj`, `SolutionName.IntegrationTests.csproj`) and namespace inside directories `Src` and `Tests`.
 -  Change the package name in the `SolutionName.csproj`.
--  Change the *main project* reference in the tests project in files `Tests/SolutionName.UnitTests.csproj` and `Tests/SolutionName.IntegrationTests.csproj`
+-  Change the *main project* reference in the tests project in files `Tests/SolutionName.Tests.csproj` and `Tests/SolutionName.IntegrationTests.csproj`
 -  Fix in the `README.md` the path of the badges and remove this section. (change all *{username}/{repo}* tokens with your own data).
 -  Add to `README.md` usage instructions of your client/SDK.
 -  Update `_config.yml` with project details (github.io docs website)

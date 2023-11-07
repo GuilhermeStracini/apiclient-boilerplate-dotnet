@@ -3,9 +3,9 @@ $ProjectDescription = Read-Host -Prompt 'Brief resume of this project'
 $SolutionName = Read-Host -Prompt 'Solution name / NuGet package name (SlugVersion)'
 $GitHubUsername = Read-Host -Prompt 'GitHub username'
 $GitHubRepo = Read-Host -Prompt 'GitHub repository'
-$AppVeyorId = Read-Host -Prompt 'AppVeyor project ID'
-$CodacyId = Read-Host -Prompt 'Codacy project ID'
-$CodeClimateId = Read-Host -Prompt 'Code Climate project ID'
+$AppVeyorId = Read-Host -Prompt 'AppVeyor project ID (badge)'
+$CodacyId = Read-Host -Prompt 'Codacy project ID (badge)'
+$CodeClimateId = Read-Host -Prompt 'Code Climate project ID (badge)'
 $CompanyName = Read-Host -Prompt 'Company/Author name (package copyright)'
 $CodacyToken = Read-Host -Prompt 'Codacy secure token (AppVeyor)'
 $CodeClimateToken = Read-Host -Prompt 'Code Climate secure token (AppVeyor)'
@@ -14,7 +14,13 @@ $DocumentationWebsite = Read-Host -Prompt 'API documentation URL'
 
 $MainProjectFile = "Src/SolutionName/SolutionName.csproj"
 $IntegrationTestProjectFile = "Tests/SolutionName.IntegrationTests/SolutionName.IntegrationTests.csproj"
-$UnitTestProjectFile = "Tests/SolutionName.UnitTests/SolutionName.UnitTests.csproj"
+$UnitTestProjectFile = "Tests/SolutionName.Tests/SolutionName.Tests.csproj"
+
+$InterfaceClientFile = "Src/SolutionName/ISolutionNameClient.cs"
+$ClientFile = "Src/SolutionName/SolutionNameClient.cs"
+
+$IntegrationTestClassFile = "Tests/SolutionName.IntegrationTests/SolutionNameClientTests.cs"
+$UnitTestClassFile = "Tests/SolutionName.Tests/SolutionNameClientTests.cs"
 
 Remove-Item README.md
 (Get-Content README.template.md) | Select-Object -Skip 24 | Set-Content README.md
@@ -61,13 +67,19 @@ Rename-Item -Path ".\SolutionName.sln" ".\$SolutionName.sln"
 (Get-Content $MainProjectFile) | ForEach-Object { $_ -replace "{companyName}", $CompanyName } | Set-Content $MainProjectFile
 (Get-Content $MainProjectFIle) | ForEach-Object { $_ -replace "{project description}", $ProjectDescription } | Set-Content $MainProjectFile
 
+Rename-Item -Path $InterfaceClientFile -NewName "I$SolutionName" + "Client.cs"
+Rename-Item -Path $ClientFile -NewName "$SolutionName" + "Client.cs"
+
+Rename-Item -Path $IntegrationTestClassFile -NewName "$SolutionName" + "ClientTests.cs"
+Rename-Item -Path $UnitTestClassFile -NewName "$SolutionName" + "ClientTests.cs"
+
 Rename-Item -Path $MainProjectFile -NewName "$SolutionName.csproj"
 Rename-Item -Path $IntegrationTestProjectFile -NewName "$SolutionName.IntegrationTests.csproj"
-Rename-Item -Path $UnitTestProjectFile -NewName "$SolutionName.UnitTests.csproj"
+Rename-Item -Path $UnitTestProjectFile -NewName "$SolutionName.Tests.csproj"
 
 Rename-Item -Path "Src/SolutionName" "$SolutionName"
 Rename-Item -Path "Tests/SolutionName.IntegrationTests" "$SolutionName.IntegrationTests"
-Rename-Item -Path "Tests/SolutionName.UnitTests" "$SolutionName.UnitTests"
+Rename-Item -Path "Tests/SolutionName.Tests" "$SolutionName.Tests"
 
 Remove-Item initial-setup.bat
 Remove-Item initial-setup.ps1
