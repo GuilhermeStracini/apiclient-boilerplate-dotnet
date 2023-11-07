@@ -48,7 +48,7 @@ build_script:
 - ps: $Params =  "/k:`"$env:SONAR_PROJECT`"", "/o:`"$env:SONAR_ORGANIZATION`"", "/v:`"$env:APPVEYOR_BUILD_NUMBER`""
 - ps: $Params += "/d:sonar.host.url=`"https://sonarcloud.io`""
 - ps: if($env:LOCAL_PR -Eq 1) { $Params +=  "/d:sonar.token=`"$env:SONAR_TOKEN`"" }
-- ps: $Params += "/d:sonar.exclusions=`"**/bin/**/*,**/obj/**/*`"", "/d:sonar.coverage.exclusions=`"**/$env:SOLUTION_NAME.UnitTests/**,**/*Tests.cs`""
+- ps: $Params += "/d:sonar.exclusions=`"**/bin/**/*,**/obj/**/*`"", "/d:sonar.coverage.exclusions=`"**/$env:SOLUTION_NAME.Tests/**,**/*Tests.cs`""
 - ps: $Params += "/d:sonar.cs.opencover.reportsPaths=`"$env:CD\Tests\$env:SOLUTION_NAME.Tests\coverage.opencover.xml`""
 - ps: if(-Not $env:APPVEYOR_PULL_REQUEST_NUMBER) { $Params += "/d:sonar.branch.name=`"$env:APPVEYOR_REPO_BRANCH`"" }
 - ps: if($env:APPVEYOR_PULL_REQUEST_NUMBER) { $Params += "/d:sonar.pullrequest.key=$env:APPVEYOR_PULL_REQUEST_NUMBER", "/d:sonar.pullrequest.branch=`"$env:APPVEYOR_REPO_BRANCH`"" }
@@ -79,9 +79,9 @@ after_build:
 
 - rd /s /q Src\%SOLUTION_NAME%\bin\Release\
 
-- xcopy Tests\%SOLUTION_NAME%.UnitTests\*.xml Coverage\UnitTests\
-- xcopy Tests\%SOLUTION_NAME%.UnitTests\*.json Coverage\UnitTests\
-- xcopy Tests\%SOLUTION_NAME%.UnitTests\*.info Coverage\UnitTests\
+- xcopy Tests\%SOLUTION_NAME%.Tests\*.xml Coverage\Tests\
+- xcopy Tests\%SOLUTION_NAME%.Tests\*.json Coverage\Tests\
+- xcopy Tests\%SOLUTION_NAME%.Tests\*.info Coverage\Tests\
 
 - xcopy Tests\%SOLUTION_NAME%.IntegrationTests\*.xml Coverage\IntegrationTests\
 - xcopy Tests\%SOLUTION_NAME%.IntegrationTests\*.json Coverage\IntegrationTests\

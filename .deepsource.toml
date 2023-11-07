@@ -11,3 +11,8 @@ name = "csharp"
 
 [[analyzers]]
 name = "docker"
+
+test_patterns = \[  
+  "tests/\*\*",  
+  "test_\*.cs"  
+]
