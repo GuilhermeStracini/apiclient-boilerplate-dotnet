@@ -6,6 +6,8 @@ $GitHubRepo = Read-Host -Prompt 'GitHub repository'
 $AppVeyorId = Read-Host -Prompt 'AppVeyor project ID (badge)'
 $CodacyId = Read-Host -Prompt 'Codacy project ID (badge)'
 $CodeClimateId = Read-Host -Prompt 'Code Climate project ID (badge)'
+$CodebeatId = Read-Host -Prompt 'Codebeat project UUID (badge)'
+$DeepSourceId = Read-Host -Prompt 'DeepSource project ID (badge)'
 $CompanyName = Read-Host -Prompt 'Company/Author name (package copyright)'
 $CodacyToken = Read-Host -Prompt 'Codacy secure token (AppVeyor)'
 $CodeClimateToken = Read-Host -Prompt 'Code Climate secure token (AppVeyor)'
@@ -23,14 +25,15 @@ $IntegrationTestClassFile = "Tests/SolutionName.IntegrationTests/SolutionNameCli
 $UnitTestClassFile = "Tests/SolutionName.Tests/SolutionNameClientTests.cs"
 
 Remove-Item README.md
-(Get-Content README.template.md) | Select-Object -Skip 24 | Set-Content README.md
-Remove-Item README.template.md
+Rename-Item -Path ".\README.template.md" -NewName ".\README.md"
 
 (Get-Content README.md) | ForEach-Object { $_ -replace "{username}", $GitHubUsername } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{repo}", $GitHubRepo } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{appVeyorId}", $AppVeyorId } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{codacyId}", $CodacyId } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{codeClimateId}", $CodeClimateId } | Set-Content README.md
+(Get-Content README.md) | ForEach-Object { $_ -replace "{codebeatId}", $CodebeatId } | Set-Content README.md
+(Get-Content README.md) | ForEach-Object { $_ -replace "{deepSourceId}", $DeepSourceId } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "SolutionName", $SolutionName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{PackageName}", $SolutionName } | Set-Content README.md
 (Get-Content README.md) | ForEach-Object { $_ -replace "{Project Name}", $ProjectName } | Set-Content README.md
