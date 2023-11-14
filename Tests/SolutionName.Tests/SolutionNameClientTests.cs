@@ -1,10 +1,10 @@
+using System.Net;
 using System.Net.Http;
-using FluentAssertions;
 using System.Threading;
 using System.Threading.Tasks;
+using FluentAssertions;
 using Moq;
 using Xunit;
-using System.Net;
 
 namespace SolutionName.Tests;
 
