@@ -12,7 +12,7 @@ This is a **template repository** that sets the basic code and infrastructure fo
 
 ## Instructions
 
-> **Warning**
+> [!Warning]
 >
 > The automated process listed below only works in a **Windows** environment. A **Linux/MAC** setup is on the way but currently is not supported, so it should be done manually
 
