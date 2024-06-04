@@ -86,3 +86,4 @@ Rename-Item -Path "Tests/SolutionName.Tests" "$SolutionName.Tests"
 
 Remove-Item initial-setup.bat
 Remove-Item initial-setup.ps1
+Remove-Item initial-setup.sh
