@@ -38,11 +38,7 @@ before_build:
 - cmd: curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-windows-amd64 > codeclimate-test-reporter.exe
 - cmd: dotnet tool install --global dotnet-sonarscanner
 
-build:
-  publish_nuget: true
-  include_nuget_references: true
-  parallel: true
-  verbosity: normal
+build: off
 
 build_script:
 - ps: $Params =  "/k:`"$env:SONAR_PROJECT`"", "/o:`"$env:SONAR_ORGANIZATION`"", "/v:`"$env:APPVEYOR_BUILD_NUMBER`""
@@ -54,47 +50,71 @@ build_script:
 - ps: if($env:APPVEYOR_PULL_REQUEST_NUMBER) { $Params += "/d:sonar.pullrequest.key=$env:APPVEYOR_PULL_REQUEST_NUMBER", "/d:sonar.pullrequest.branch=`"$env:APPVEYOR_REPO_BRANCH`"" }
 - ps: Start-process "dotnet" "sonarscanner begin $($Params -join ' ')"
 - codeclimate-test-reporter before-build
-- dotnet build %SOLUTION_NAME%.sln
-- ps: $TEST_PROJECTS = (Get-ChildItem -Path .\Tests\**\ -Recurse -Include *.csproj).Fullname
-- ps: |
-    foreach($testProject in $TEST_PROJECTS)
-    {
-        dotnet test $testProject /p:CollectCoverage=true "/p:CoverletOutputFormat=\`"cobertura,opencover,lcov\`""
-    }
-- if %LOCAL_PR% EQU 1 codecov -f "Tests\%SOLUTION_NAME%.Tests\coverage.opencover.xml"
-- if %LOCAL_PR% EQU 1 codeclimate-test-reporter format-coverage -t lcov -o "Tests\%SOLUTION_NAME%.Tests\code-climate.json" "Tests\%SOLUTION_NAME%.Tests\coverage.info"
-- if %LOCAL_PR% EQU 1 codeclimate-test-reporter upload-coverage -i "Tests\%SOLUTION_NAME%.Tests\code-climate.json" -r %CODECLIMATE_TOKEN%
-- if %LOCAL_PR% EQU 1 java -jar ./codacy-test-reporter.jar report -l CSharp -t %CODACY_PROJECT_TOKEN% -r "Tests\%SOLUTION_NAME%.Tests\coverage.opencover.xml"
-- if %LOCAL_PR% EQU 1 dotnet sonarscanner end /d:sonar.token="%SONAR_TOKEN%"
+- dotnet build --verbosity minimal %SOLUTION_NAME%.sln
+  - ps: $TEST_PROJECTS = (Get-ChildItem -Path .\Tests\**\ -Recurse -Include *.csproj).Fullname
+  - ps: |
+      foreach($testProject in $TEST_PROJECTS)
+      {
+          dotnet test $testProject --no-build --verbosity minimal /p:CollectCoverage=true "/p:CoverletOutputFormat=\`"cobertura,opencover,lcov\`"" --logger:"junit;LogFilePath=test-results.xml"
+          $path = Split-Path $testProject
+          $wc = New-Object 'System.Net.WebClient'
+          $wc.UploadFile("https://ci.appveyor.com/api/testresults/xunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path $path/test-results.xml))          
+      }
+  - if %LOCAL_PR% EQU 1 codecov -f "Tests\%SOLUTION_NAME%.Tests\coverage.net8.0.opencover.xml"
+  - if %LOCAL_PR% EQU 1 codeclimate-test-reporter format-coverage -t lcov -o "Tests\%SOLUTION_NAME%.Tests\code-climate.json" "Tests\%SOLUTION_NAME%.Tests\coverage.net8.0.info"
+  - if %LOCAL_PR% EQU 1 codeclimate-test-reporter upload-coverage -i "Tests\%SOLUTION_NAME%.Tests\code-climate.json" -r %CODECLIMATE_TOKEN%
+  - if %LOCAL_PR% EQU 1 java -jar ./codacy-test-reporter.jar report -l CSharp -t %CODACY_PROJECT_TOKEN% -r "Tests\%SOLUTION_NAME%.Tests\coverage.net8.0.opencover.xml"
+  - if %LOCAL_PR% EQU 1 dotnet sonarscanner end /d:sonar.token="%SONAR_TOKEN%"
 
 after_build:
-- xcopy Src\%SOLUTION_NAME%\bin\Release\netstandard2.0\*.* Build\netstandard2.0\
-- xcopy Src\%SOLUTION_NAME%\bin\Release\netstandard2.1\*.* Build\netstandard2.1\
+  - echo refs > exclusions.txt
+  - echo "Generating binaries artifacts"
+  - ps: $VERSIONS = ("netstandard2.0", "netstandard2.1", "net6.0", "net7.0", "net8.0")
+  - ps: $PROJECTS = ("Configuration", "ElasticSearch", "Elmah", "EventLog", "I18n.PtBr", "Log4Net", "RabbitMQ", "Redis", "Utils")
+  - ps: |
+      foreach($version in $VERSIONS)
+      {
+          xcopy Src\$env:SOLUTION_NAME\bin\Release\$version\*.* Build\Core\$version\ /s /f /e /r /k /y /EXCLUDE:exclusions.txt
+          foreach($project in $PROJECTS)
+          {
+              xcopy Src\$env:SOLUTION_NAME.$project\bin\Release\$version\*.* Build\$project\$version\ /s /f /e /r /k /y /EXCLUDE:exclusions.txt
+          }
+      }
 
-- copy Src\%SOLUTION_NAME%\bin\Release\%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.nupkg %SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.nupkg
+  - echo "Generating nupkg and snupkg artifacts"
+  - copy Src\%SOLUTION_NAME%\bin\Release\%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.nupkg %SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.nupkg
+  - copy Src\%SOLUTION_NAME%\bin\Release\%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.snupkg %SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.snupkg
+  - ps: |
+      foreach($project in $PROJECTS)
+      {
+        copy Src\$env:SOLUTION_NAME.$project\bin\Release\$env:SOLUTION_NAME.$project.$env:APPVEYOR_BUILD_VERSION.nupkg $env:SOLUTION_NAME.$project.$env:APPVEYOR_BUILD_VERSION.nupkg
+        copy Src\$env:SOLUTION_NAME.$project\bin\Release\$env:SOLUTION_NAME.$project.$env:APPVEYOR_BUILD_VERSION.snupkg $env:SOLUTION_NAME.$project.$env:APPVEYOR_BUILD_VERSION.snupkg
+      }
+  - ps: Get-ChildItem .\*.nupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
+  - ps: Get-ChildItem .\*.snupkg | % { Push-AppveyorArtifact $_.FullName -FileName $_.Name }
 
-- rd /s /q Src\%SOLUTION_NAME%\bin\Release\
+  - echo "Generating coverage artifact"
+  - rd /s /q Src\%SOLUTION_NAME%\bin\Release\
+  - xcopy Tests\%SOLUTION_NAME%.Tests\*.xml Coverage\
+  - xcopy Tests\%SOLUTION_NAME%.Tests\*.json Coverage\
+  - xcopy Tests\%SOLUTION_NAME%.Tests\*.info Coverage\
+  - 7z a -tzip -mx9 "%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.Coverage.zip" Coverage
+  - appveyor PushArtifact "%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.Coverage.zip"
 
-- xcopy Tests\%SOLUTION_NAME%.Tests\*.xml Coverage\Tests\
-- xcopy Tests\%SOLUTION_NAME%.Tests\*.json Coverage\Tests\
-- xcopy Tests\%SOLUTION_NAME%.Tests\*.info Coverage\Tests\
+  - echo "Generating compressed artifacts files"
+  - ps: |
+      foreach($version in $VERSIONS)
+      {
+        7z a -tzip -mx9 "$env:SOLUTION_NAME.Core.$version.$env:APPVEYOR_BUILD_VERSION:.zip" Build\Core\$version\
+        Push-AppveyorArtifact "$env:SOLUTION_NAME.Core.$version.$env:APPVEYOR_BUILD_VERSION:.zip"
+        foreach($project in $PROJECTS)
+        {
+          7z a -tzip -mx9 "$env:SOLUTION_NAME.$project.$version.$env:APPVEYOR_BUILD_VERSION.zip" Build\$project\$version\
+          Push-AppveyorArtifact "$env:SOLUTION_NAME.$project.$version.$env:APPVEYOR_BUILD_VERSION.zip"
+        }
+      }
 
-- xcopy Tests\%SOLUTION_NAME%.IntegrationTests\*.xml Coverage\IntegrationTests\
-- xcopy Tests\%SOLUTION_NAME%.IntegrationTests\*.json Coverage\IntegrationTests\
-- xcopy Tests\%SOLUTION_NAME%.IntegrationTests\*.info Coverage\IntegrationTests\
-
-- 7z a -tzip -mx9 "%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.zip" Build
-- 7z a -tzip -mx9 "%SOLUTION_NAME%.%APPVEYOR_BUILD_VERSION%.Coverage.zip" Coverage
-
-artifacts:
-- path: $(SOLUTION_NAME).%APPVEYOR_BUILD_VERSION%.nupkg
-  name: Package
-
-- path: $(SOLUTION_NAME).%APPVEYOR_BUILD_VERSION%.zip
-  name: ZipFile
-
-- path: $(SOLUTION_NAME).%APPVEYOR_BUILD_VERSION%.Coverage.zip
-  name: Coverage
+test: off
 
 deploy:
 - provider: NuGet
