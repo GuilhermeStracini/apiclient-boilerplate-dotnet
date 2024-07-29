@@ -8,13 +8,19 @@
 
 This is a **template repository** that sets the basic code and infrastructure for a repository/solution in **.NET C#** to create an **API client wrapper** (sometimes known as **SDK**).
 
+> [!Note]
+>
+> A [appveyor.yml](appveyor.yml) file is included for [AppVeyor](https://www.appveyor.com/) CI pipeline.
+> AppVeyor is free for open-source projects.
+> For closed-source projects, consider a paid subscription or other CI tools (GitHub Actions, CircleCI, TeamCity).
+
 ---
 
 ## Instructions
 
 > [!Warning]
 >
-> The automated process listed below only works in a **Windows** environment. A **Linux/MAC** setup is on the way but currently is not supported, so it should be done manually
+> The automated process listed below now supports **Windows** and **Linux/MAC** environments.
 
 ### Automated process
 
