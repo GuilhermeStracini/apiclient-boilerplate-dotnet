@@ -26,7 +26,7 @@ public class SolutionNameClientTests : IClassFixture<WireMockFixture>
                 // ReSharper disable once SettingNotFoundInConfiguration
                 WireMockFixture.Configuration["WireMock:BaseUrl"]
                     ?? throw new ArgumentException("Could not resolve WireMock server address")
-            )
+            ),
         };
         var client = new SolutionNameClient(httpClient);
 
