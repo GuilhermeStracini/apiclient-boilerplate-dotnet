@@ -1,21 +1,21 @@
 #!/bin/bash
 
 # Prompt the user for input
-read -p 'Project name (readable version): ' ProjectName
-read -p 'Brief resume of this project: ' ProjectDescription
-read -p 'Solution name / NuGet package name (SlugVersion): ' SolutionName
-read -p 'GitHub username: ' GitHubUsername
-read -p 'GitHub repository: ' GitHubRepo
-read -p 'AppVeyor project ID (badge): ' AppVeyorId
-read -p 'Codacy project ID (badge): ' CodacyId
-read -p 'Code Climate project ID (badge): ' CodeClimateId
-read -p 'Codebeat project UUID (badge): ' CodebeatId
-read -p 'DeepSource project ID (badge): ' DeepSourceId
-read -p 'Company/Author name (package copyright): ' CompanyName
-read -p 'Codacy secure token (AppVeyor): ' CodacyToken
-read -p 'Code Climate secure token (AppVeyor): ' CodeClimateToken
-read -p 'Sonar Cloud secure token (AppVeyor): ' SonarCloudToken
-read -p 'API documentation URL: ' DocumentationWebsite
+read -p -r 'Project name (readable version): ' ProjectName
+read -p -r 'Brief resume of this project: ' ProjectDescription
+read -p -r 'Solution name / NuGet package name (SlugVersion): ' SolutionName
+read -p -r 'GitHub username: ' GitHubUsername
+read -p -r 'GitHub repository: ' GitHubRepo
+read -p -r 'AppVeyor project ID (badge): ' AppVeyorId
+read -p -r 'Codacy project ID (badge): ' CodacyId
+read -p -r 'Code Climate project ID (badge): ' CodeClimateId
+read -p -r 'Codebeat project UUID (badge): ' CodebeatId
+read -p -r 'DeepSource project ID (badge): ' DeepSourceId
+read -p -r 'Company/Author name (package copyright): ' CompanyName
+read -p -r 'Codacy secure token (AppVeyor): ' CodacyToken
+read -p -r 'Code Climate secure token (AppVeyor): ' CodeClimateToken
+read -p -r 'Sonar Cloud secure token (AppVeyor): ' SonarCloudToken
+read -p -r 'API documentation URL: ' DocumentationWebsite
 
 # Set file paths
 MainProjectFile="Src/SolutionName/SolutionName.csproj"
