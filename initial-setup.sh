@@ -87,15 +87,14 @@ mv "$IntegrationTestClassFile" "${SolutionName}ClientTests.cs"
 mv "$UnitTestClassFile" "${SolutionName}ClientTests.cs"
 
 # Rename project files
-mv "$MainProjectFile" "$SolutionName.csproj"
-mv "$IntegrationTestProjectFile" "$SolutionName.IntegrationTests.csproj"
-mv "$UnitTestProjectFile" "$SolutionName.Tests.csproj"
+mv "$MainProjectFile" "Src/SolutionName/$SolutionName.csproj"
+mv "$IntegrationTestProjectFile" "Tests/SolutionName.IntegrationTests/$SolutionName.IntegrationTests.csproj"
+mv "$UnitTestProjectFile" "Tests/SolutionName.Tests/$SolutionName.Tests.csproj"
 
-# Rename solution directiories
+# Rename solution directories
 mv "Src/SolutionName" "Src/$SolutionName"
 mv "Tests/SolutionName.IntegrationTests" "Tests/$SolutionName.IntegrationTests"
 mv "Tests/SolutionName.Tests" "Tests/$SolutionName.Tests"
-
 # Remove initial-setup files
 rm initial-setup.bat
 rm initial-setup.ps1
