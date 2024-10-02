@@ -14,7 +14,6 @@ read -p -r 'DeepSource project ID (badge): ' DeepSourceId
 read -p -r 'Company/Author name (package copyright): ' CompanyName
 read -p -r 'Codacy secure token (AppVeyor): ' CodacyToken
 read -p -r 'Code Climate secure token (AppVeyor): ' CodeClimateToken
-read -p -r 'Sonar Cloud secure token (AppVeyor): ' SonarCloudToken
 read -p -r 'API documentation URL: ' DocumentationWebsite
 
 # Set file paths
@@ -57,8 +56,6 @@ sed -i "s/GuilhermeStracini\/apiclient-boilerplate-dotnet/$GitHubUsername\/$GitH
 # Replace placeholders in appveyor.yml
 sed -i "s/<secure token from Codacy>/$CodacyToken/" appveyor.yml
 sed -i "s/<secure token from CodeClimate>/$CodeClimateToken/" appveyor.yml
-sed -i "s/<secure token from Sonar Cloud>/$SonarCloudToken/" appveyor.yml
-
 # Replace placeholders in .cs and .csproj files
 for file in $(find . -type f -name '*.cs*'); do
     sed -i "s/SolutionName/$SolutionName/" "$file"
