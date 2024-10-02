@@ -8,8 +8,6 @@ environment:
     secure: <secure token from Codacy>
   CODECLIMATE_TOKEN:
     secure: <secure token from CodeClimate>
-  SONAR_TOKEN:
-    secure: <secure token from Sonar Cloud>
 
 dotnet_csproj:
   patch: true
