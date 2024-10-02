@@ -11,7 +11,6 @@ $DeepSourceId = Read-Host -Prompt 'DeepSource project ID (badge)'
 $CompanyName = Read-Host -Prompt 'Company/Author name (package copyright)'
 $CodacyToken = Read-Host -Prompt 'Codacy secure token (AppVeyor)'
 $CodeClimateToken = Read-Host -Prompt 'Code Climate secure token (AppVeyor)'
-$SonarCloudToken = Read-Host -Prompt 'Sonar Cloud secure token (AppVeyor)'
 $DocumentationWebsite = Read-Host -Prompt 'API documentation URL'
 
 $MainProjectFile = "Src/SolutionName/SolutionName.csproj"
@@ -48,7 +47,6 @@ Rename-Item -Path ".\README.template.md" -NewName ".\README.md"
 
 (Get-Content appveyor.yml) | ForEach-Object { $_ -replace "<secure token from Codacy>", $CodacyToken } | Set-Content appveyor.yml
 (Get-Content appveyor.yml) | ForEach-Object { $_ -replace "<secure token from CodeClimate>", $CodeClimateToken } | Set-Content appveyor.yml
-(Get-Content appveyor.yml) | ForEach-Object { $_ -replace "<secure token from Sonar Cloud>", $SonarCloudToken } | Set-Content appveyor.yml
 
 (Get-ChildItem -Recurse -Include *.cs*) | ForEach-Object { 
     $Content = Get-Content $_
