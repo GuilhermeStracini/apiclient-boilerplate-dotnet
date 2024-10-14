@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <ProjectGuid>1b62e67e-52c6-413e-b6e2-0f8f024c6f19</ProjectGuid>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
 
