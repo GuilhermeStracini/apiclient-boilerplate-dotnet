@@ -65,14 +65,19 @@ build_script:
       foreach($testProject in $TEST_PROJECTS)
       {
           dotnet test $testProject --no-build --verbosity minimal /p:CollectCoverage=true "/p:CoverletOutputFormat=\`"cobertura,opencover,lcov\`"" --logger:"junit;LogFilePath=test-results.xml"
+          /p:MergeWith="$(Build.BinariesDirectory)\coverage.opencover.xml"
           $path = Split-Path $testProject
           $wc = New-Object 'System.Net.WebClient'
           $wc.UploadFile("https://ci.appveyor.com/api/testresults/xunit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path $path/test-results.xml))          
       }
   - if %LOCAL_PR% EQU 1 codecov -f "Tests\%SOLUTION_NAME%.Tests\coverage.net8.0.opencover.xml"
+  - if %LOCAL_PR% EQU 1 codecov -f "$(Build.BinariesDirectory)\coverage.opencover.xml"
   - if %LOCAL_PR% EQU 1 codeclimate-test-reporter format-coverage -t lcov -o "Tests\%SOLUTION_NAME%.Tests\code-climate.json" "Tests\%SOLUTION_NAME%.Tests\coverage.net8.0.info"
+  - if %LOCAL_PR% EQU 1 codeclimate-test-reporter format-coverage -t lcov -o "$(Build.BinariesDirectory)\code-climate.json" "$(Build.BinariesDirectory)\coverage.opencover.xml"
   - if %LOCAL_PR% EQU 1 codeclimate-test-reporter upload-coverage -i "Tests\%SOLUTION_NAME%.Tests\code-climate.json" -r %CODECLIMATE_TOKEN%
+  - if %LOCAL_PR% EQU 1 codeclimate-test-reporter upload-coverage -i "$(Build.BinariesDirectory)\code-climate.json" -r %CODECLIMATE_TOKEN%
   - if %LOCAL_PR% EQU 1 java -jar ./codacy-test-reporter.jar report -l CSharp -t %CODACY_PROJECT_TOKEN% -r "Tests\%SOLUTION_NAME%.Tests\coverage.net8.0.opencover.xml"
+  - if %LOCAL_PR% EQU 1 java -jar ./codacy-test-reporter.jar report -l CSharp -t %CODACY_PROJECT_TOKEN% -r "$(Build.BinariesDirectory)\coverage.opencover.xml"
   - if %LOCAL_PR% EQU 1 dotnet sonarscanner end /d:sonar.token="%SONAR_TOKEN%"
 
 after_build:
