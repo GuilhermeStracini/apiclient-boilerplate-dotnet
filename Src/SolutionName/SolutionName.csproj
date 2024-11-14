@@ -1,4 +1,5 @@
 <Project Sdk="Microsoft.NET.Sdk">
+<Import Project="../Directory.Packages.props" />
 
   <PropertyGroup>
     <ProjectGuid>31B5C92F-CD29-4833-8119-F28E3BDCCCFD</ProjectGuid>
