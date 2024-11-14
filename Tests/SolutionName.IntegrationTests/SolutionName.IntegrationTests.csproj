@@ -1,5 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
+  <Import Project="../../Directory.Packages.props" />
   <PropertyGroup>
     <ProjectGuid>1b62e67e-52c6-413e-b6e2-0f8f024c6f19</ProjectGuid>
     <TargetFramework>net8.0</TargetFramework>
