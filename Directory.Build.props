@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;netcoreapp3.1</TargetFrameworks>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Version>1.0.0</Version>
+    <Authors>Your Name</Authors>
+    <Company>Your Company</Company>
+    <Product>Your Product</Product>
+    <Description>Your Description</Description>
+    <PackageTags>tag1;tag2</PackageTags>
+    <RepositoryUrl>https://github.com/your/repo</RepositoryUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/your/repo</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/your/repo/main/icon.png</PackageIconUrl>
+  </PropertyGroup>
+</Project>
