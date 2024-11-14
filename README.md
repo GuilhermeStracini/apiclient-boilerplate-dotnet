@@ -3,6 +3,9 @@
 💡 🏗️ A boilerplate API client template for .NET API client wrappers
 
 ---
+- The repository now uses centralized package management. All NuGet package versions are defined in the `Directory.Packages.props` file located in the root directory.
+- To add or update a package version, modify the `Directory.Packages.props` file.
+- Ensure that your build environment is configured to recognize the `Directory.Packages.props` file.
 
 ## About
 
