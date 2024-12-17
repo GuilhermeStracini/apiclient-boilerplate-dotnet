@@ -6,8 +6,6 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
-  pull_request_target:
-    types: [opened, synchronize, reopened]
 
 jobs:
   DeepSource:
@@ -18,29 +16,21 @@ jobs:
         with:
           ref: ${{ github.event.pull_request.head.sha }}
 
+      - name: Docker compose up
+        run: docker compose up -d && sleep 10
+
       - name: Install DeepSource scanner
         run: curl https://deepsource.io/cli | sh
 
       - name: Setup .NET
         uses: actions/setup-dotnet@v4
         with:
-          dotnet-version: '8.0.x'
+          dotnet-version: '9.x'
 
       - name: Build and analyze
-        if: >-
-          (
-            github.event_name == 'pull_request' &&
-            github.event.pull_request.head.repo.full_name == github.repository
-          ) || (
-            github.event_name == 'pull_request_target' &&
-            github.event.pull_request.head.repo.full_name != github.repository
-          ) || (
-            github.event_name == 'workflow_dispatch'
-          )
         env:
           DEEPSOURCE_DSN: ${{ secrets.DEEPSOURCE_DSN }}
         run: |
           dotnet build -c Debug --verbosity minimal
-          dotnet test -c Debug --verbosity minimal --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat="cobertura" /p:CoverletOutput='../Results/'
-          ./bin/deepsource report --analyzer test-coverage --key csharp --value-file Tests/Results/coverage.cobertura.xml
-
+          dotnet test -c Debug --verbosity minimal --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat="cobertura"
+          ./bin/deepsource report --analyzer test-coverage --key csharp --value-file ./Tests/CrispyWaffle.Tests/coverage.net9.0.cobertura.xml
