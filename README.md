@@ -1,53 +1,70 @@
-# API Client boilerplate template
+# 🚀 API Client Boilerplate Template 🎯
 
-💡 🏗️ A boilerplate API client template for .NET API client wrappers
-
----
-
-## About
-
-This is a **template repository** that sets the basic code and infrastructure for a repository/solution in **.NET C#** to create an **API client wrapper** (sometimes known as **SDK**).
-
-> [!Note]
->
-> A [appveyor.yml](appveyor.yml) file is included for [AppVeyor](https://www.appveyor.com/) CI pipeline.
-> AppVeyor is free for open-source projects.
-> For closed-source projects, consider a paid subscription or other CI tools (GitHub Actions, CircleCI, TeamCity).
+🏗️ **A modern and easy-to-use boilerplate for building .NET API client wrappers** (also known as **SDKs**).  
 
 ---
 
-## Instructions
+## 🌟 About
 
-> [!Warning]
->
-> The automated process listed below now supports **Windows** and **Linux/MAC** environments.
+This repository is a **template** designed to kickstart your journey in creating robust **API client wrappers** using **.NET C#**.  
+Save time and effort with a preconfigured solution that includes essential tools and CI pipeline setup.
 
-### Automated process
-
-- Click on the green button **USE THIS TEMPLATE**
-- Give a name to your new project/repository
-- Clone your newly created repository to your machine
-- Execute/run the file `initial-setup.bat` or `initial-setup.ps1` and follow the instructions on the prompt/terminal
-
-### Manual process
-
-- Click on the green button **USE THIS TEMPLATE**
-- Give a name to your new project/repository
-- Clone your newly created repository to your machine
-- Delete this file (`README.md`) and rename `README.template.md` to `README.md`
-- Change the `appveyor.yml` with your **tokens** (use secure tokens) or use your preferred CI tool (Circle CI, GitHub Actions, Jenkins, Team City, Azure DevOps)
-- Change `SolutionName.sln` to your solution/project name
-- Change project name (`SolutionName.csproj`, `SolutionName.Tests.csproj`, `SolutionName.IntegrationTests.csproj`) and namespace inside directories `Src` and `Tests`
-- Change the package name in the `SolutionName.csproj` file
-- Change the *main project* reference in the tests project in files `Tests/SolutionName.Tests.csproj` and `Tests/SolutionName.IntegrationTests.csproj`
-- Fix in the `README.md` the path of the badges. (change all *{username}/{repo}* tokens with your own data)
-- Add to `README.md` usage instructions of your client/SDK
-- Update `_config.yml` with project details (github.io docs website)
+🔧 Key features:  
+- 🛠️ **.NET Solution Setup**: Ready-to-use structure for source code, unit tests, and integration tests.  
+- ✅ **CI Integration**: Includes a sample [AppVeyor](https://www.appveyor.com/) CI pipeline configuration with `appveyor.yml`.  
+   > 💡 **Tip**: AppVeyor is free for open-source projects. For private repositories, consider alternatives like **GitHub Actions**, **CircleCI**, or **Azure DevOps**.  
 
 ---
 
-## License
+## 🚀 Getting Started
 
-Licensed under: **MIT license** ([LICENSE](https://github.com/guibranco/apiclient-boilerplate-dotnet/blob/main/LICENSE) or [http://opensource.org/licenses/MIT](http://opensource.org/licenses/MIT)).
+### ⚡ Automated Setup
 
-This will also be your project's **LICENSE**, but you can change it to another one that suits your needs.
+Follow these quick steps for a hassle-free experience:
+
+1. Click the green **"Use this template"** button at the top.  
+2. Name your new repository and clone it to your machine.  
+3. Run the initial setup script:  
+   - On Windows: Execute `initial-setup.bat`  
+   - On PowerShell: Execute `initial-setup.ps1`
+   - On Linux/Mac: Execute `initial-setup.sh`
+4. Follow the prompts and enjoy! 🎉  
+
+---
+
+### 🛠️ Manual Setup
+
+If you prefer to do it step-by-step:
+
+1. Click the green **"Use this template"** button.  
+2. Clone your newly created repository.  
+3. Delete this file (`README.md`) and rename `README.template.md` to `README.md`.  
+4. Update the following files with your project details:  
+   - `appveyor.yml` → Add secure tokens or configure your preferred CI tool.  
+   - `SolutionName.sln` → Replace with your solution name.  
+   - Project files (`SolutionName.csproj`, `SolutionName.Tests.csproj`, `SolutionName.IntegrationTests.csproj`).  
+     - Update namespaces and project names inside the `Src` and `Tests` directories.  
+   - `README.md` → Fix badge paths (`{username}/{repo}`) and add usage instructions.  
+   - `_config.yml` → Update with project details for the GitHub Pages documentation site.  
+
+5. ⚙️ Final touches:  
+   - Adjust **test project references** in `Tests/SolutionName.Tests.csproj` and `Tests/SolutionName.IntegrationTests.csproj`.  
+   - Update the **package name** in your main project file.  
+
+---
+
+## 🏷️ License
+
+📄 This project is licensed under the **MIT License**.  
+Feel free to use it as is or replace it with a license that suits your needs.  
+
+🔗 [View LICENSE](https://github.com/guibranco/apiclient-boilerplate-dotnet/blob/main/LICENSE) | [Read More About MIT](http://opensource.org/licenses/MIT)
+
+---
+
+## 🎉 Contribute & Customize  
+
+💬 Questions? Ideas? Open an issue or fork this repository to make it your own!  
+Don't forget to ⭐ **star** the project if this template saved you time. 😄  
+
+---
