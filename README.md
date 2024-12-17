@@ -1,4 +1,4 @@
-# 🚀 API Client Boilerplate Template for .NET 🎯
+# 🚀 API Client Boilerplate Template for .NET 🔷
 
 🏗️ **A modern and easy-to-use boilerplate for building .NET API client wrappers** (also known as **SDKs**).  
 
@@ -12,7 +12,7 @@ Save time and effort with a preconfigured solution that includes essential tools
 🔧 Key features:  
 - 🛠️ **.NET Solution Setup**: Ready-to-use structure for source code, unit tests, and integration tests.  
 - ✅ **CI Integration**: Includes a sample [AppVeyor](https://www.appveyor.com/) CI pipeline configuration with `appveyor.yml`.  
-   > 💡 **Tip**: AppVeyor is free for open-source projects. For private repositories, consider alternatives like **GitHub Actions**, **CircleCI**, or **Azure DevOps**.  
+   > 💡 **Tip**: AppVeyor is free for open-source projects. Consider alternatives like **GitHub Actions**, **CircleCI**, or **Azure DevOps** for private repositories.  
 
 ---
 
@@ -33,7 +33,7 @@ Follow these quick steps for a hassle-free experience:
 
 ### 🛠️ Manual Setup
 
-If you prefer to do it step-by-step:
+Would you prefer to do it step-by-step? No problem!  
 
 1. Click the green **"Use this template"** button.  
 2. Clone your newly created repository.  
@@ -67,3 +67,5 @@ Feel free to use it as is or replace it with a license that suits your needs.
 Don't forget to ⭐ **star** the project if this template saved you time. 😄  
 
 ---
+
+🔷 **Happy Coding in .NET!** 🎯 
