@@ -25,9 +25,8 @@ Follow these quick steps for a hassle-free experience:
 1. Click the green **"Use this template"** button at the top.  
 2. Name your new repository and clone it to your machine.  
 3. Run the initial setup script:  
-   - On Windows: Execute `initial-setup.bat`  
-   - On PowerShell: Execute `initial-setup.ps1`
-   - On Linux/Mac: Execute `initial-setup.sh`
+   - 🪟 On Windows: Execute `initial-setup.bat` or `initial-setup.ps1` 
+   - 🐧 On Linux/Mac: Execute `initial-setup.sh`
 4. Follow the prompts and enjoy! 🎉  
 
 ---
