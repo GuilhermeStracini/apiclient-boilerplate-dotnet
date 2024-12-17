@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <ProjectGuid>31B5C92F-CD29-4833-8119-F28E3BDCCCFD</ProjectGuid>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net8.0;net9.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0;net9.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <LangVersion>latest</LangVersion>
     <ImplicitUsings>disable</ImplicitUsings>
