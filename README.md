@@ -1,4 +1,4 @@
-# 🚀 API Client Boilerplate Template 🎯
+# 🚀 API Client Boilerplate Template for .NET 🎯
 
 🏗️ **A modern and easy-to-use boilerplate for building .NET API client wrappers** (also known as **SDKs**).  
 
