@@ -6,6 +6,11 @@ on:
       - main
   pull_request:
     types: [opened, synchronize, reopened]
+
+permissions:
+  pull-requests: read # For PR decoration
+  contents: read # For repo checkout
+  security-events: write # For SonarCloud results
   
 jobs:
   SonarCloudAnalysis:
