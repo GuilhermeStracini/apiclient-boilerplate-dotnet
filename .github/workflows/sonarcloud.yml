@@ -18,22 +18,35 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - name: Check if SONAR_TOKEN is available
+        id: check_secrets
+        run: |
+          if [[ -z "${{ secrets.SONAR_TOKEN }}" ]]; then
+            echo "SKIP_SONAR=true" >> $GITHUB_ENV
+          else
+            echo "SKIP_SONAR=false" >> $GITHUB_ENV
+          fi
+
       - name: Set up Java
+        if: env.SKIP_SONAR == 'false'
         uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: 21
       
       - uses: actions/checkout@v4
+        if: env.SKIP_SONAR == 'false'
         with:
           fetch-depth: 0
 
       - name: Setup .NET
+        if: env.SKIP_SONAR == 'false'
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '9.x'  
 
       - name: Cache SonarCloud packages
+        if: env.SKIP_SONAR == 'false'
         uses: actions/cache@v4
         with:
           path: ~/.sonar/cache
@@ -41,6 +54,7 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar
       
       - name: Cache SonarCloud scanner
+        if: env.SKIP_SONAR == 'false'
         id: cache-sonar-scanner
         uses: actions/cache@v4
         with:
@@ -49,10 +63,11 @@ jobs:
           restore-keys: ${{ runner.os }}-sonar-scanner
       
       - name: Install SonarCloud scanner
-        if: steps.cache-sonar-scanner.outputs.cache-hit != 'true'
+        if: env.SKIP_SONAR == 'false' && steps.cache-sonar-scanner.outputs.cache-hit != 'true'
         run: dotnet tool update dotnet-sonarscanner --tool-path ~/.sonar/cache/
           
       - name: Set SonarCloud variables
+        if: env.SKIP_SONAR == 'false'
         shell: bash
         run: |
           KEY="${{ github.repository_owner }}_${{ github.event.repository.name }}"
@@ -61,6 +76,7 @@ jobs:
           echo "ORG=${ORG@L}" >> "${GITHUB_ENV}" # Lowercase the ORG variable
       
       - name: Build and analyze
+        if: env.SKIP_SONAR == 'false'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -69,3 +85,7 @@ jobs:
           dotnet build -c Release --verbosity minimal
           dotnet test -c Release --verbosity minimal --no-build --no-restore /p:CollectCoverage=true /p:CoverletOutputFormat="opencover"
           ~/.sonar/cache/dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
+
+      - name: Skip SonarCloud (Forked PR)
+        if: env.SKIP_SONAR == 'true'
+        run: echo "🔒 SonarCloud is skipped because secrets are not available for PRs from forks."
