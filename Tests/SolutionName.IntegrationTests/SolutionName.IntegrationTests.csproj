@@ -1,16 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <ProjectGuid>1b62e67e-52c6-413e-b6e2-0f8f024c6f19</ProjectGuid>
     <TargetFramework>net9.0</TargetFramework>
     <IsPackable>false</IsPackable>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="appsettings.api_tests.json" />
     <None Remove="Mocks\hello-world.txt" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="appsettings.api_tests.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -19,7 +16,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="coverlet.msbuild" Version="6.0.4">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
@@ -31,14 +27,12 @@
     <PackageReference Include="Testcontainers" Version="4.4.0" />
     <PackageReference Include="WireMock.Net" Version="1.8.1" />
     <PackageReference Include="xunit" Version="2.9.3" />
-    <PackageReference Include="xunit.runner.visualstudio" Version="3.0.2">
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\..\Src\SolutionName\SolutionName.csproj" />
   </ItemGroup>
-
 </Project>
