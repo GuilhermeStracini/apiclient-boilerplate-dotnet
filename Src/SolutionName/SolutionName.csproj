@@ -1,5 +1,4 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <ProjectGuid>31B5C92F-CD29-4833-8119-F28E3BDCCCFD</ProjectGuid>
     <TargetFrameworks>netstandard2.0;netstandard2.1;net8.0;net9.0</TargetFrameworks>
@@ -22,7 +21,6 @@
     <Version>1.0.0</Version>
     <AssemblyVersion>1.0.0.0</AssemblyVersion>
   </PropertyGroup>
-
   <ItemGroup>
     <None Include="..\..\LICENSE">
       <Pack>True</Pack>
@@ -37,5 +35,4 @@
       <PackagePath>\</PackagePath>
     </None>
   </ItemGroup>
-
 </Project>
