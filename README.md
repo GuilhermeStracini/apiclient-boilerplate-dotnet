@@ -1,194 +1,408 @@
-🚀 .NET API Client Boilerplate
+# 🚀 .NET API Client Boilerplate
 
-A modern, reusable template for building API client libraries and SDKs in C#/.NET. Get started quickly with a structured solution, automated setup scripts, testing projects, and continuous integration.
+A reusable .NET template for building API client libraries and SDKs.
 
-✨ Features
-🏗️ Ready-to-use solution structure — Separate projects for the client library, unit tests, and integration tests.
-⚙️ Automated setup — Initialize your project with platform-specific setup scripts.
-🧪 Testing foundation — Organize unit and integration tests from day one.
-🔄 CI/CD integration — Includes a sample AppVeyor configuration.
-📦 NuGet-ready structure — Customize the main project for packaging and distribution.
-📚 Documentation support — Includes configuration for GitHub Pages.
-🎯 Customizable template — Adapt the solution to your API, naming conventions, and development workflow.
-🚀 Getting Started
-Prerequisites
+The project provides a structured solution layout, automated setup scripts, testing projects, and continuous integration examples, enabling teams to focus on API integrations rather than project scaffolding.
 
-Before you begin, make sure you have:
+> **Note**
+>
+> This repository provides a project foundation and does not implement API-specific functionality. Authentication, request models, business rules, and endpoint integrations should be added according to the requirements of the target API.
 
-The .NET SDK required by the solution.
-Git.
-A GitHub account to create your repository from this template.
-A code editor or IDE, such as Visual Studio or Visual Studio Code.
-⚡ Quick Setup
+---
 
-The recommended approach is to use the repository as a GitHub template.
+## ✨ Features
 
-Open this repository on GitHub.
-Click Use this template and create your new repository.
-Clone your newly created repository:
+- 🏗️ **Ready-to-use solution structure** — Separate projects for the client library, unit tests, and integration tests.
+- ⚙️ **Automated setup** — Initialize your project using platform-specific setup scripts.
+- 🧪 **Testing support** — Establish unit and integration testing practices from the beginning of the project.
+- 🔄 **CI/CD integration** — Includes a sample AppVeyor configuration that can be adapted to your preferred platform.
+- 📦 **NuGet-ready structure** — Configure packaging and distribution with minimal effort.
+- 📚 **Documentation site configuration** — Includes GitHub Pages configuration for project documentation.
+- 🎯 **Flexible customization** — Adapt naming conventions, namespaces, and project settings to your requirements.
+
+---
+
+## 📋 Prerequisites
+
+Before getting started, ensure the following tools are available:
+
+- .NET SDK compatible with the target framework used by the solution.
+- Git.
+- A GitHub account.
+- A code editor or IDE, such as:
+  - Visual Studio
+  - Visual Studio Code
+  - JetBrains Rider
+
+---
+
+## ⚡ Quick Setup
+
+The recommended approach is to create a new repository from this template and customize it for your API client implementation.
+
+### 1. Create a Repository
+
+1. Open this repository on GitHub.
+2. Select **Use this template**.
+3. Create a new repository from the template.
+
+### 2. Clone the Repository
+
+```bash
 git clone https://github.com/<username>/<repository>.git
 cd <repository>
+```
 
-Run the appropriate setup script from the repository root.
+### 3. Run the Setup Script
 
-Windows — Command Prompt
+Execute the appropriate setup script from the repository root.
 
+#### Windows (Command Prompt)
+
+```cmd
 initial-setup.bat
+```
 
+#### Windows (PowerShell)
 
-Windows — PowerShell
-
+```powershell
 .\initial-setup.ps1
+```
 
+#### Linux / macOS
 
-Linux / macOS
-
+```bash
 chmod +x initial-setup.sh
 ./initial-setup.sh
+```
 
-Follow the script prompts to customize your solution.
-Review the generated project names, namespaces, and configuration files before committing your changes.
-Note: Run only the script appropriate for your environment. Review the script contents before executing them, especially if you have customized the template.
-🛠️ Manual Setup
+### 4. Review the Generated Configuration
 
-Prefer to configure everything yourself? Follow these steps.
+After running the setup script:
 
-1. Create your repository
+- Verify solution and project names.
+- Review namespaces.
+- Validate project references.
+- Inspect generated configuration files.
+- Confirm that documentation has been updated correctly.
 
-Use the GitHub template feature and clone the resulting repository to your machine.
+> **Important**
+>
+> Run only the script appropriate for your operating system. Review the script contents before execution, particularly if the template has been customized.
 
-2. Customize the documentation
-Replace the existing README.md with README.template.md, or merge the template contents into your preferred documentation.
-Update the project description, installation instructions, usage examples, and repository links.
-Replace placeholder values such as <username> and <repository>.
-Update badge URLs to point to your own repository and CI pipeline.
-3. Rename the solution and projects
+---
 
-Replace SolutionName with your chosen solution or project name wherever applicable.
+## 🛠️ Manual Setup
+
+If you prefer not to use the automated setup scripts, complete the following steps manually.
+
+### 1. Create Your Repository
+
+Create a repository from the GitHub template and clone it locally.
+
+### 2. Customize the Documentation
+
+Use `README.template.md` as the starting point for your project documentation.
+
+Update:
+
+- Project description.
+- Installation instructions.
+- Usage examples.
+- Repository and documentation links.
+- Build and test badges.
+
+Replace placeholder values such as:
+
+```text
+<username>
+<repository>
+```
+
+with the appropriate values for your project.
+
+---
+
+### 3. Rename the Solution and Projects
+
+Replace `SolutionName` with your chosen project name throughout the repository.
 
 Review and update:
 
+```text
 SolutionName.sln
 SolutionName.csproj
 SolutionName.Tests.csproj
 SolutionName.IntegrationTests.csproj
-Namespaces and project references in the Src and Tests directories.
+```
+
+Also update:
+
+- Namespaces.
+- Project references.
+- Folder names if necessary.
+- Build and deployment configuration files.
 
 Ensure the solution file references the correct project paths after renaming.
 
-4. Configure continuous integration
+---
 
-The repository includes an example appveyor.yml file for AppVeyor.
+### 4. Configure Continuous Integration
 
-Customize the configuration to match your project, including:
+A sample `appveyor.yml` file is provided as a starting point.
 
-.NET SDK and build configuration.
-Restore, build, and test commands.
-Test result reporting.
-Package creation and publishing, if required.
+Adapt the pipeline as required:
 
-You can also use GitHub Actions, CircleCI, or Azure DevOps for your CI/CD workflow.
+- .NET SDK version.
+- Restore steps.
+- Build steps.
+- Test execution.
+- Test reporting.
+- NuGet packaging and publication.
 
-Security tip: Store API keys, access tokens, and publishing credentials in your CI provider's secure environment or secret store. Never commit credentials to source control.
+Alternative CI/CD platforms include:
 
-5. Update project configuration
+- GitHub Actions
+- Azure DevOps
+- CircleCI
+- GitLab CI
+
+> **Security**
+>
+> Store API keys, access tokens, and publishing credentials using your CI provider's secret management features. Never commit credentials to source control.
+
+---
+
+### 5. Update Project Configuration
 
 Review the following files and settings:
 
-File or location	What to update
-appveyor.yml	Build, test, and deployment configuration
-SolutionName.sln	Solution name and project paths
-Main .csproj	Assembly name, package ID, metadata, and target framework
-Test .csproj files	Project references and test dependencies
-Src/	Client implementation and namespaces
-Tests/	Unit and integration tests
-README.md	Documentation, badges, and usage examples
-_config.yml	GitHub Pages settings and site metadata
-6. Verify the solution
+| File or Location | Purpose |
+|------------------|----------|
+| `appveyor.yml` | Build, test, and deployment settings |
+| `SolutionName.sln` | Solution definition and project paths |
+| Main `.csproj` | Package metadata, assembly name, version, and target frameworks |
+| Test `.csproj` files | Test dependencies and project references |
+| `Src/` | Client implementation |
+| `Tests/` | Unit and integration tests |
+| `README.md` | Project documentation |
+| `_config.yml` | GitHub Pages configuration |
 
-After completing the configuration, restore dependencies, build the solution, and run the tests:
+---
 
+### 6. Verify the Solution
+
+Restore packages, build the solution, and execute tests:
+
+```bash
 dotnet restore
 dotnet build --no-restore
 dotnet test
+```
 
+If multiple solution files exist, specify the target `.sln` file explicitly.
 
-Run these commands against the solution file if the repository contains multiple solutions or the CLI cannot identify the intended solution automatically.
+---
 
-🧩 Recommended API Client Practices
+## 🔐 Authentication
 
-When implementing your API client, consider the following practices:
+This template does not enforce a specific authentication strategy.
 
-Use HttpClient correctly. Prefer IHttpClientFactory and dependency injection for applications that use Microsoft's hosting and DI infrastructure.
-Support asynchronous operations. Use async and await, and accept CancellationToken parameters where appropriate.
-Handle errors consistently. Provide clear exceptions or structured error responses for unsuccessful HTTP requests.
-Keep models explicit. Separate API request and response DTOs from internal implementation details when useful.
-Make configuration straightforward. Support base URLs, authentication, and other API-specific settings.
-Test without unnecessary network calls. Use mock HTTP handlers for unit tests and reserve integration tests for actual service interactions.
-Protect credentials. Avoid logging access tokens, secrets, or sensitive request and response data.
-Document public APIs. Include XML documentation and practical examples for consumers of the SDK.
+Depending on the target API, you may implement support for:
 
-These are recommendations for extending the template, not claims that every feature is already implemented.
+- API Keys
+- Bearer Tokens (JWT)
+- OAuth 2.0
+- Basic Authentication
+- Mutual TLS (mTLS)
+- Custom authentication mechanisms
 
-🧪 Testing
+Authentication concerns should remain configurable and isolated from the client implementation whenever possible.
 
-Keep unit and integration tests separate so they serve distinct purposes.
+---
 
-Unit tests: Validate client behavior, serialization, request construction, and error handling in isolation.
-Integration tests: Verify interactions with a real API or a dedicated test environment.
+## 🧩 API Client Development Guidelines
 
-Run the test suite with:
+When implementing your API client library, consider the following practices.
 
+### Use HttpClient Correctly
+
+Prefer `IHttpClientFactory` and dependency injection for applications built on Microsoft's hosting and dependency injection infrastructure.
+
+### Support Asynchronous Operations
+
+Use `async` and `await` consistently and expose `CancellationToken` parameters where cancellation is meaningful.
+
+### Handle Errors Consistently
+
+Provide predictable error handling through exceptions, result objects, or a clearly documented strategy.
+
+### Keep Models Explicit
+
+Separate API request and response DTOs from internal implementation models when appropriate.
+
+### Simplify Configuration
+
+Provide straightforward configuration options for:
+
+- Base URLs
+- Authentication
+- Timeouts
+- Retry policies
+- API-specific settings
+
+### Support Resiliency Strategies
+
+Consider implementing:
+
+- Retries
+- Exponential backoff
+- Timeouts
+- Rate-limit handling
+- Circuit breakers
+
+Libraries such as Polly can help implement these patterns.
+
+### Favor Testability
+
+Structure the project to support automated testing.
+
+Use mock HTTP handlers for unit tests and reserve live HTTP communication for integration tests.
+
+### Protect Credentials
+
+Avoid logging:
+
+- Access tokens
+- Secrets
+- API keys
+- Sensitive request or response data
+
+### Document Public APIs
+
+Provide XML documentation comments and practical usage examples for consumers of the library.
+
+> These recommendations are intended to guide development and are not claims that every capability is implemented by the template.
+
+---
+
+## 🧪 Testing
+
+Unit and integration tests should be maintained separately to serve distinct purposes.
+
+### Unit Tests
+
+Validate:
+
+- Request generation
+- Serialization and deserialization
+- Client behavior
+- Error handling
+- Validation logic
+
+without relying on external services.
+
+### Integration Tests
+
+Validate:
+
+- End-to-end interactions
+- Authentication flows
+- API compatibility
+- Real-world response handling
+
+against a real API or dedicated test environment.
+
+Run the test suite using:
+
+```bash
 dotnet test
+```
 
+If integration tests require credentials or external services, configure the appropriate environment variables and endpoints before execution.
 
-For integration tests that require credentials or a running API, configure the required environment variables and service endpoints before execution.
+---
 
-📦 Packaging and NuGet
+## 📦 Packaging and NuGet
 
-When your client is ready for distribution:
+Before publishing a package, ensure that:
 
-Set the package ID, version, authors, description, license, and repository metadata in the main project file.
-Review your target frameworks and public API compatibility.
-Create the package:
+- Package metadata is complete and accurate.
+- XML documentation generation is enabled.
+- Public APIs have been reviewed for compatibility.
+- License information is configured correctly.
+- Repository URLs have been configured.
+- Versioning follows your chosen release strategy.
+
+### Create a Package
+
+```bash
 dotnet pack -c Release
+```
 
-Publish the generated .nupkg using your preferred NuGet publishing workflow.
+### Publish a Package
 
-Keep API keys and publishing tokens in a secure credential store or CI secrets.
+Publish the generated `.nupkg` file using your preferred NuGet publishing workflow.
 
-See the NuGet package creation documentation for details.
+Keep API keys and publishing tokens in a secure credential store or your CI/CD platform's secrets management system.
 
-📖 Documentation
+---
 
-This template includes _config.yml for configuring a GitHub Pages documentation site.
+## 📖 Documentation
 
-Update the site title, description, repository references, and other settings to match your project. Add installation instructions, authentication guidance, configuration examples, and API usage samples to help developers get started.
+This template includes a `_config.yml` file for configuring documentation hosted with GitHub Pages.
 
-🤝 Contributing
+Documentation should include:
 
-Contributions, bug reports, and suggestions are welcome!
+- Installation instructions
+- Authentication guidance
+- Configuration examples
+- API usage scenarios
+- Code samples
+- Troubleshooting guidance
+- Release and migration notes
 
-Fork the repository.
-Create a branch for your changes.
-Implement and test your changes.
-Submit a pull request with a clear description.
+Well-maintained documentation significantly improves the adoption and maintainability of SDKs and client libraries.
 
-For significant changes, consider opening an issue first to discuss the proposed approach.
+---
 
-📄 License
+## 🤝 Contributing
 
-This template is described as being licensed under the MIT License. Confirm that the repository's LICENSE file contains the intended license before redistributing the project.
+Contributions are welcome and help improve the project for the entire community.
 
-View the LICENSE file
-Learn about the MIT License
+To contribute:
 
-If you choose a different license for your derived project, update the license file and relevant package metadata accordingly.
+1. Fork the repository.
+2. Create a feature branch.
+3. Implement your changes.
+4. Execute the test suite.
+5. Submit a Pull Request with a clear description of the changes.
 
-⭐ Support the Project
+For significant modifications, consider opening an issue first to discuss the proposed approach.
 
-If this template helps you build your next .NET API client, consider starring the repository ⭐.
+---
 
-Have questions or ideas? Open an issue or contribute improvements to help make the template better for everyone.
+## 📄 License
 
-Happy coding! Build reliable API clients with .NET and C#. 🔷
+This project is distributed under the terms of the MIT License.
+
+Before redistributing the template or publishing derivative work:
+
+- Verify the contents of the `LICENSE` file.
+- Update license metadata if you choose to adopt a different license.
+- Ensure NuGet package metadata reflects the selected license.
+
+For additional details, see:
+
+- `LICENSE`
+- MIT License documentation
+
+---
+
+## ⭐ Support the Project
+
+If this template helps your team build API client libraries or SDKs, consider starring the repository.
+
+Feedback, bug reports, and improvement suggestions are always appreciated.
+
+Thank you for using and supporting the project.
