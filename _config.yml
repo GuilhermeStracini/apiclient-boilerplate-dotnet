@@ -1,5 +1,34 @@
+# ==========================================================
+# GitHub Pages — API Client Boilerplate .NET SDK
+# ==========================================================
+
+# Tema do site
 theme: jekyll-theme-minimal
-title: API Client Boilerplate .NET SDK
-description: A repository template for .NET API client projects
-logo: https://raw.githubusercontent.com/GuilhermeStracini/apiclient-boilerplate-dotnet/main/logo.png
+
+# Identidade do projeto
+title: "API Client Boilerplate .NET SDK"
+description: >-
+  A reusable .NET SDK boilerplate for building, testing,
+  documenting, and maintaining reliable API client libraries.
+
+# Identidade visual
+logo: "https://raw.githubusercontent.com/GuilhermeStracini/apiclient-boilerplate-dotnet/main/logo.png"
+
+# Exibição de downloads
 show_downloads: true
+
+# Idioma e codificação
+lang: en
+
+# Metadados
+author: "Guilherme Stracini"
+
+# Configurações de URLs
+url: "https://guilhermestracini.github.io"
+baseurl: "/apiclient-boilerplate-dotnet"
+
+# Markdown
+markdown: kramdown
+
+# Segurança: não executar plugins arbitrários
+safe: true
