@@ -1,5 +1,57 @@
-theme: jekyll-theme-minimal
+# ==========================================================
+# GitHub Pages Configuration
+# API Client Boilerplate .NET SDK
+# ==========================================================
+
+# Site Information
 title: API Client Boilerplate .NET SDK
-description: A repository template for .NET API client projects
-logo: https://raw.githubusercontent.com/GuilhermeStracini/apiclient-boilerplate-dotnet/main/logo.png
+description: >-
+  A reusable .NET boilerplate for building, testing, packaging,
+  documenting, and maintaining API client libraries and SDKs.
+
+# Theme
+theme: jekyll-theme-minimal
+
+# Branding
+logo: /assets/images/logo.png
+
+# Localization
+lang: en-US
+
+# Author
+author: Guilherme Stracini
+
+# Repository
+repository: GuilhermeStracini/apiclient-boilerplate-dotnet
+
+# Site URL
+url: "https://guilhermestracini.github.io"
+baseurl: "/apiclient-boilerplate-dotnet"
+
+# GitHub Integration
+github:
+  is_project_page: true
+
+# Build Settings
+markdown: kramdown
+safe: true
+
+# Downloads
 show_downloads: true
+
+# Navigation
+header_pages:
+  - README.md
+
+# Excluded Files
+exclude:
+  - LICENSE
+  - appveyor.yml
+  - README.template.md
+  - initial-setup.bat
+  - initial-setup.ps1
+  - initial-setup.sh
+
+# SEO
+plugins:
+  - jekyll-seo-tag
