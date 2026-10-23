@@ -1,34 +1,57 @@
 # ==========================================================
-# GitHub Pages — API Client Boilerplate .NET SDK
+# GitHub Pages Configuration
+# API Client Boilerplate .NET SDK
 # ==========================================================
 
-# Tema do site
+# Site Information
+title: API Client Boilerplate .NET SDK
+description: >-
+  A reusable .NET boilerplate for building, testing, packaging,
+  documenting, and maintaining API client libraries and SDKs.
+
+# Theme
 theme: jekyll-theme-minimal
 
-# Identidade do projeto
-title: "API Client Boilerplate .NET SDK"
-description: >-
-  A reusable .NET SDK boilerplate for building, testing,
-  documenting, and maintaining reliable API client libraries.
+# Branding
+logo: /assets/images/logo.png
 
-# Identidade visual
-logo: "https://raw.githubusercontent.com/GuilhermeStracini/apiclient-boilerplate-dotnet/main/logo.png"
+# Localization
+lang: en-US
 
-# Exibição de downloads
-show_downloads: true
+# Author
+author: Guilherme Stracini
 
-# Idioma e codificação
-lang: en
+# Repository
+repository: GuilhermeStracini/apiclient-boilerplate-dotnet
 
-# Metadados
-author: "Guilherme Stracini"
-
-# Configurações de URLs
+# Site URL
 url: "https://guilhermestracini.github.io"
 baseurl: "/apiclient-boilerplate-dotnet"
 
-# Markdown
-markdown: kramdown
+# GitHub Integration
+github:
+  is_project_page: true
 
-# Segurança: não executar plugins arbitrários
+# Build Settings
+markdown: kramdown
 safe: true
+
+# Downloads
+show_downloads: true
+
+# Navigation
+header_pages:
+  - README.md
+
+# Excluded Files
+exclude:
+  - LICENSE
+  - appveyor.yml
+  - README.template.md
+  - initial-setup.bat
+  - initial-setup.ps1
+  - initial-setup.sh
+
+# SEO
+plugins:
+  - jekyll-seo-tag
